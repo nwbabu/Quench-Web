@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\SINGH\Desktop\QuenchPublish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Accept_Order_Request_Restaurant_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="App_Manage_Client.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="App_Manage_Complain_Detail.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="APP_MANAGE_DELIVERY_LINK_REST_DETAILS.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="App_Manage_Order.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="App_Manage_Order_Detail.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="app_manage_order_referal.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="App_Manage_Payment_Transanction.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="App_Manage_Vaersion.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>02/22/2013 21:13:40</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/02/2015 22:02:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/02/2015 22:02:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>04/04/2015 05:37:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>04/04/2015 05:37:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>04/04/2015 05:37:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 14:36:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>02/14/2015 01:46:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>02/14/2015 01:46:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>02/14/2015 01:46:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>02/14/2015 01:46:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>02/14/2015 01:46:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>02/14/2015 01:46:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>02/14/2015 01:46:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>02/14/2015 01:46:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>02/14/2015 01:46:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/24/2012 03:53:58</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/04/2014 09:03:56</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/28/2012 01:30:52</publishTime>
+    </File>
+    <File Include="bin/Quenchhunger.dll">
+      <publishTime>08/06/2019 09:46:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/19/2015 08:49:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 16:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 16:32:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/12/2014 03:56:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 16:32:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/28/2015 16:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/28/2015 16:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/28/2015 16:34:30</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>09/11/2013 05:58:38</publishTime>
+    </File>
+    <File Include="Content/animate.css">
+      <publishTime>07/27/2019 20:09:39</publishTime>
+    </File>
+    <File Include="Content/animate.min.css">
+      <publishTime>07/27/2019 20:09:39</publishTime>
+    </File>
+    <File Include="Content/animsition.min.css">
+      <publishTime>07/27/2019 20:09:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/27/2019 20:17:20</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/27/2019 20:17:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome.min.css">
+      <publishTime>07/27/2019 20:09:39</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>07/27/2019 20:17:01</publishTime>
+    </File>
+    <File Include="Content/style.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/style.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/style_new.css">
+      <publishTime>07/27/2019 20:09:39</publishTime>
+    </File>
+    <File Include="Content/style_new.min.css">
+      <publishTime>07/27/2019 20:09:39</publishTime>
+    </File>
+    <File Include="CY_COMPLAIN_DOCUMENT_NO.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="CY_CUST_DOCUMENT_NO.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="CY_Employee_Document_No.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="CY_Login_DOCUMENT_NO.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="CY_ORDER_DOCUMENT_NO.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="CY_PRODUCT_DOCUMENT_NO.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="CY_RESTAURANT_DOCUMENT_NO.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Cy_Token_No.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="EMAIL_SMTP.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/27/2019 20:17:01</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/27/2019 20:17:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/27/2019 20:17:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/27/2019 20:17:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/27/2019 20:17:20</publishTime>
+    </File>
+    <File Include="Get_Customer_Order_History.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="GET_Delivery_Boy_month.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="GET_DElivery_Link_Res.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Get_Delivery_Validate_OTP1_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Get_Delivery_Validate_OTP_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="GET_FEEDBACK_DETAILS.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Get_Menu.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Get_Menu1.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="GET_ORDER_HISTORY.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="GET_ORDER_HISTORY1.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="GET_ORDER_HISTORY_DateWise.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="GET_ORDER_HISTORY_DateWise1.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="GET_PRODUCT_DETAILS_ADMIN.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Get_Promo_Code.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Get_Request_Delivery_Pending_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Get_Restaurant_DateWise_Order_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Get_Restaurant_Detail_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Get_Restaurant_ItemWise_Sale_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="GET_RESTAURANT_PAYMENT_RECD_DETAILS.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Get_Restaurant_View_2_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Get_Restaurant_View_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Get_Restaurent_Product.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Get_Send_offer_Email_Notificatin_Detail_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Get_Send_offer_Notificatin_Detail_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/27/2019 20:17:01</publishTime>
+    </File>
+    <File Include="p1_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/27/2019 20:18:06</publishTime>
+    </File>
+    <File Include="put_category1_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="PUT_Delivery_Order_History_Date_Wise_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="PUT_Delivery_Order_History_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="PUT_Delivery_Receipt_1_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="PUT_Delivery_Receipt_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Quench.Context.cs">
+      <publishTime>07/30/2019 08:43:33</publishTime>
+    </File>
+    <File Include="Quench.Context.tt">
+      <publishTime>07/30/2019 08:41:11</publishTime>
+    </File>
+    <File Include="Quench.cs">
+      <publishTime>07/30/2019 08:44:06</publishTime>
+    </File>
+    <File Include="Quench.Designer.cs">
+      <publishTime>07/30/2019 08:44:06</publishTime>
+    </File>
+    <File Include="Quench.edmx">
+      <publishTime>07/30/2019 08:41:23</publishTime>
+    </File>
+    <File Include="Quench.edmx.diagram">
+      <publishTime>08/04/2019 12:53:46</publishTime>
+    </File>
+    <File Include="Quench.tt">
+      <publishTime>07/30/2019 08:41:11</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/27/2019 20:17:20</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/27/2019 20:17:19</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>07/27/2019 20:17:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>07/27/2019 20:17:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>07/27/2019 20:17:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>07/27/2019 20:17:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>07/27/2019 20:17:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>07/27/2019 20:17:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>07/27/2019 20:17:44</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>07/27/2019 20:17:42</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>07/27/2019 20:17:43</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>07/27/2019 20:17:43</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>07/27/2019 20:17:42</publishTime>
+    </File>
+    <File Include="SMS_SMTP.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Temp_delivery_Order_History_DateWise.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Temp_get_search.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Temp_Restaurant_DateWise_Order.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="uni_Advertise.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="uni_area.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="UNI_AREA_CITY_LINK.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Uni_BankMaster.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Uni_BankOffer.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="uni_Banner.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="UNI_CATEGORY.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="UNI_CITY.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="UNI_Country.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="UNI_COUNTRY_CODE.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="Uni_country_link_state.cs">
+      <publishTime>07/30/2019 08:43:57</publishTime>
+    </File>
+    <File Include="UNi_CUSTOMER_LOG.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Uni_Cust_Token_No.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Uni_Delivery_Charge.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Uni_Delivery_Feedback.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="uni_department.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="UNI_DESIG.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Uni_Expire_Days.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Uni_FeedBack.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="UNI_FIN.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="UNI_Login_Admin.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Uni_Offer.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="uni_Offer_Email_Notification_detail.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="uni_Offer_Notification_detail.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="UNI_ORDER_PAYMENT_DETAILS.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Uni_Product.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="UNI_RESTAURANT_LEDGER_PAYMENT.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="UNI_RESTAURANT_LEDGER_TRANS_PAYMENT.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="uni_res_prod_offer.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="UNI_ROLE.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Uni_Service_message.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="uni_state.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Uni_State_City_Link.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="uni_state_link_country.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="UNI_STATUS.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="uni_tax.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="uni_time_zone.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="uni_uom.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Update_Advertise_Detail_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Update_Status_Restaurant_Login_Result.cs">
+      <publishTime>07/30/2019 08:43:56</publishTime>
+    </File>
+    <File Include="Views/Account/ConfirmEmail.cshtml">
+      <publishTime>07/27/2019 20:17:49</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginFailure.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPassword.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPasswordConfirmation.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>07/28/2019 17:08:55</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>07/30/2019 10:07:00</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPassword.cshtml">
+      <publishTime>07/28/2019 17:10:45</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPasswordConfirmation.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Account/SendCode.cshtml">
+      <publishTime>07/28/2019 17:11:12</publishTime>
+    </File>
+    <File Include="Views/Account/VerifyCode.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
+      <publishTime>07/27/2019 20:17:49</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>07/27/2019 20:17:01</publishTime>
+    </File>
+    <File Include="Views/Home/Banner.cshtml">
+      <publishTime>08/06/2019 08:57:48</publishTime>
+    </File>
+    <File Include="Views/Home/CategoryPartail.cshtml">
+      <publishTime>08/06/2019 09:39:50</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>07/27/2019 20:17:01</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>07/31/2019 08:35:22</publishTime>
+    </File>
+    <File Include="Views/Home/Restaurants.cshtml">
+      <publishTime>08/06/2019 09:38:16</publishTime>
+    </File>
+    <File Include="Views/Home/RestaurantsMenu.cshtml">
+      <publishTime>08/06/2019 09:39:58</publishTime>
+    </File>
+    <File Include="Views/Manage/AddPhoneNumber.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Manage/ChangePassword.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Manage/Index.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Manage/ManageLogins.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Manage/SetPassword.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Manage/VerifyPhoneNumber.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>07/27/2019 20:17:49</publishTime>
+    </File>
+    <File Include="Views/Shared/Lockout.cshtml">
+      <publishTime>07/27/2019 20:17:50</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>07/28/2019 16:44:38</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>07/28/2019 17:16:16</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/27/2019 20:17:01</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>07/27/2019 20:17:01</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/06/2019 09:46:05</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

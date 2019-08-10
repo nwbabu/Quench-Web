@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Quench Hunger</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://quenchhunger.com/css/style_new.css" rel="stylesheet">
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+      {
+          <ul class="nav navbar-nav" style="float:right">
+           
+            <li class="active">
+                <a href="#" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-shopping-cart" style="color:green">
+                    </span>Cart <span class="badge">@Session["cart"]</span>
+                </a>
+            </li>
+
+        </ul>
+      }
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <img class="img-rounded" src="http://quenchhunger.com/images/image/logo.png" alt="" />
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+        <hr />
+        <!-- start: FOOTER -->
+        <section class="app-section">
+            <div class="app-wrap">
+                <div class="container">
+                    <div class="row text-img-block text-xs-left">
+                        <div class="container">
+                            <div class="col-xs-12 col-sm-5 right-image text-center">
+                                <figure> <img src="http://quenchhunger.com/images/image/app.png" alt="Right Image" class="img-fluid"> </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-7 left-text">
+                                <h3>The Best Food Delivery App</h3>
+                                <p>Now you can make food happen pretty much wherever you are thanks to the free easy-to-use Food Delivery &amp; Takeout App.</p>
+                                <div class="social-btns">
+                                    <a href="#" class="app-btn apple-button clearfix">
+                                        <div class="pull-left"><i class="fa fa-apple"></i> </div>
+                                        <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">App Store</span> </div>
+                                    </a>
+                                    <a href="#" class="app-btn android-button clearfix">
+                                        <div class="pull-left"><i class="fa fa-android"></i> </div>
+                                        <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">Play store</span> </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <!-- top footer statrs -->
+            <div class="row top-footer">
+                <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
+                    <a href="#"> <img src="http://quenchhunger.com/images/image/logo.png" alt="Footer logo"> </a> <span>Order Delivery &amp; Take-Out </span>
+                </div>
+                <div class="col-xs-12 col-sm-2 about color-gray">
+                    <h5>About Us</h5>
+                    <ul>
+                        <li><a href="#">About us</a> </li>
+                        <li><a href="#">History</a> </li>
+                        <li><a href="#">Our Team</a> </li>
+                        <li><a href="#">We are hiring</a> </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
+                    <h5>How it Works</h5>
+                    <ul>
+                        <li><a href="#">Enter your location</a> </li>
+                        <li><a href="#">Choose restaurant</a> </li>
+                        <li><a href="#">Choose meal</a> </li>
+                        <li><a href="#">Pay via credit card</a> </li>
+                        <li><a href="#">Wait for delivery</a> </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-2 pages color-gray">
+                    <h5>Pages</h5>
+                    <ul>
+                        <li><a href="#">Search results page</a> </li>
+                        <li><a href="#">User Sing Up Page</a> </li>
+                        <li><a href="#">Pricing page</a> </li>
+                        <li><a href="#">Make order</a> </li>
+                        <li><a href="#">Add to cart</a> </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 popular-locations color-gray">
+                    <h5>Popular locations</h5>
+                    <ul>
+                        <li><a href="#">Sarajevo</a> </li>
+                        <li><a href="#">Split</a> </li>
+                        <li><a href="#">Tuzla</a> </li>
+                        <li><a href="#">Sibenik</a> </li>
+                        <li><a href="#">Zagreb</a> </li>
+                        <li><a href="#">Brcko</a> </li>
+                        <li><a href="#">Beograd</a> </li>
+                        <li><a href="#">Owerri</a> </li>
+                        <li><a href="#">Gradacac</a> </li>
+                        <li><a href="#">Los Angeles</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- top footer ends -->
+            <!-- bottom footer statrs -->
+            <div class="bottom-footer">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 payment-options color-gray">
+                        <h5>Payment Options</h5>
+                        <ul>
+
+                            <li>
+                                <a href="#"> <img src="http://quenchhunger.com/images/image/mastercard.png" alt="Mastercard"> </a>
+                            </li>
+                            <li>
+                                <a href="#"> <img src="http://quenchhunger.com/images/image/maestro.png" alt="Maestro"> </a>
+                            </li>
+                            <li>
+                                <a href="#"> <img src="http://quenchhunger.com/images/image/stripe.png" alt="Stripe"> </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 address color-gray">
+                        <h5>Address</h5>
+                        <p>20 Bank Road, Owerri,Imo State,Nigeria</p>
+                        <h5>Phone: <a href="tel:+234 8100465415">+234 8100465415</a></h5>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 additional-info color-gray">
+                        <h5>Addition informations</h5>
+                        <p>Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>
+                    </div>
+                </div>
+            </div>
+            <!-- bottom footer ends -->
+        </div>
+    </footer>
+    <!-- end:Footer -->
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="s_foodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="uni_Restaurant">
+    <Key>
+      <PropertyRef Name="res_id" />
+    </Key>
+    <Property Name="res_id" Type="Int32" Nullable="false" />
+    <Property Name="Restaurant_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contact_person_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="city_id" Type="Int32" />
+    <Property Name="State_id" Type="Int32" />
+    <Property Name="Area_Id" Type="Int32" />
+    <Property Name="Country_Id" Type="Int32" />
+    <Property Name="Primary_Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Secondary_Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Primary_Email_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Secondary_Email_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Rating" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="Rest_Dur" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rest_Per" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Res_Status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="entry_date" Type="DateTime" Precision="0" />
+    <Property Name="update_entry_date" Type="DateTime" Precision="0" />
+    <Property Name="Author_id" Type="Int32" />
+    <Property Name="update_author_id" Type="Int32" />
+    <Property Name="latitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="longitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Verify_By" Type="Int32" />
+    <Property Name="verify_rem" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="fin_id" Type="Int32" />
+    <Property Name="restaurant_Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pass1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="confirm_pass" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Commission_Given" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="Dispatch_Provider" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Trending_Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="res_display_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Rest_open_time" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Rest_Open_mes" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Rest_close_time" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Rest_close_mes" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Category_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Discount" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="s_foodEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="uni_Restaurant" EntityType="Self.uni_Restaurant" />
+    <EntitySet Name="UNI_CITY" EntityType="s_foodModel.UNI_CITY" />
+    <EntitySet Name="uni_state" EntityType="s_foodModel.uni_state" />
+    <EntitySet Name="uni_area" EntityType="s_foodModel.uni_area" />
+    <EntitySet Name="App_Manage_Order" EntityType="s_foodModel.App_Manage_Order" />
+    <EntitySet Name="Uni_Product" EntityType="s_foodModel.Uni_Product" />
+    <EntitySet Name="UNI_CATEGORY" EntityType="s_foodModel.UNI_CATEGORY" />
+  </EntityContainer>
+  <EntityType Name="UNI_CITY">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Author_Id" Type="Int32" />
+    <Property Name="Update_Author_Id" Type="Int32" />
+    <Property Name="Entry_Date" Type="DateTime" Precision="0" />
+    <Property Name="update_entry_date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="uni_state">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Name="state_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Author_id" Type="Int32" />
+    <Property Name="update_author_id" Type="Int32" />
+    <Property Name="Entry_date" Type="DateTime" Precision="0" />
+    <Property Name="update_entry_date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="uni_area">
+    <Key>
+      <PropertyRef Name="Area_id" />
+    </Key>
+    <Property Name="Area_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Area_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="author_id" Type="Int32" />
+    <Property Name="update_author_id" Type="Int32" />
+    <Property Name="entry_date" Type="DateTime" Precision="0" />
+    <Property Name="update_entry_date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="App_Manage_Order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="order_date" Type="DateTime" Precision="0" />
+    <Property Name="cust_id" Type="Int32" />
+    <Property Name="delivery_boy_id" Type="Int32" />
+    <Property Name="restaurant_id" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Order_delivery_status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Tot_Bill_Amt" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Tot_Discount" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Tot_Tax" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Refund_Amt" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Recd_Amt" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Estimate_time" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Author_Id" Type="Int32" />
+    <Property Name="Update_Author_Id" Type="Int32" />
+    <Property Name="Entry_Date" Type="DateTime" Precision="0" />
+    <Property Name="update_entry_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="fin_id" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="flag_delivery_boy" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Delivery_Charges" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="OTP_no" Type="Int32" />
+    <Property Name="session_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Promo_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_TIME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Tot_Bill_Recv_Vendor" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Tot_Bill_Bal_Vendor" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Payment_Transaction_Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Delivered_Time" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Uni_Product">
+    <Key>
+      <PropertyRef Name="prod_id" />
+    </Key>
+    <Property Name="prod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prod_name" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="Prod_Cat_Id" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Prod_Unit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Prod_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Restaurant_Id" Type="Int32" />
+    <Property Name="Author_Id" Type="Int32" />
+    <Property Name="Update_Author_Id" Type="Int32" />
+    <Property Name="Entry_date" Type="DateTime" Precision="0" />
+    <Property Name="update_entry_date" Type="DateTime" Precision="0" />
+    <Property Name="Prod_Status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="prepration_time" Type="Int32" />
+    <Property Name="prepration_uom" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UNI_CATEGORY">
+    <Key>
+      <PropertyRef Name="Category_id" />
+    </Key>
+    <Property Name="Category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category_Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Author_id" Type="Int32" />
+    <Property Name="Update_Author_Id" Type="Int32" />
+    <Property Name="Entry_Date" Type="DateTime" Precision="0" />
+    <Property Name="update_entry_date" Type="DateTime" Precision="0" />
+    <Property Name="Image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

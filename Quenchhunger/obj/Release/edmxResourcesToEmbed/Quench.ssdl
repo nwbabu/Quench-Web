@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="s_foodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="App_Manage_Order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="order_date" Type="smalldatetime" />
+    <Property Name="cust_id" Type="int" />
+    <Property Name="delivery_boy_id" Type="int" />
+    <Property Name="restaurant_id" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="8" />
+    <Property Name="Order_delivery_status" Type="varchar" MaxLength="20" />
+    <Property Name="Tot_Bill_Amt" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="Tot_Discount" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="Tot_Tax" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="Refund_Amt" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="Recd_Amt" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="Estimate_time" Type="varchar" MaxLength="20" />
+    <Property Name="Author_Id" Type="int" />
+    <Property Name="Update_Author_Id" Type="int" />
+    <Property Name="Entry_Date" Type="smalldatetime" />
+    <Property Name="update_entry_date" Type="nchar" MaxLength="10" />
+    <Property Name="fin_id" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" />
+    <Property Name="flag_delivery_boy" Type="char" MaxLength="1" />
+    <Property Name="Delivery_Charges" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="OTP_no" Type="int" />
+    <Property Name="session_id" Type="varchar" MaxLength="20" />
+    <Property Name="Promo_code" Type="varchar" MaxLength="10" />
+    <Property Name="ORDER_TIME" Type="varchar" MaxLength="20" />
+    <Property Name="Tot_Bill_Recv_Vendor" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="Tot_Bill_Bal_Vendor" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="Payment_Transaction_Status" Type="varchar" MaxLength="15" />
+    <Property Name="Delivered_Time" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="uni_area">
+    <Key>
+      <PropertyRef Name="Area_id" />
+    </Key>
+    <Property Name="Area_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Area_name" Type="varchar" MaxLength="25" />
+    <Property Name="status" Type="varchar" MaxLength="8" />
+    <Property Name="author_id" Type="int" />
+    <Property Name="update_author_id" Type="int" />
+    <Property Name="entry_date" Type="smalldatetime" />
+    <Property Name="update_entry_date" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="UNI_CATEGORY">
+    <Key>
+      <PropertyRef Name="Category_id" />
+    </Key>
+    <Property Name="Category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_Name" Type="varchar" MaxLength="40" />
+    <Property Name="Status" Type="varchar" MaxLength="8" />
+    <Property Name="Author_id" Type="int" />
+    <Property Name="Update_Author_Id" Type="int" />
+    <Property Name="Entry_Date" Type="smalldatetime" />
+    <Property Name="update_entry_date" Type="smalldatetime" />
+    <Property Name="Image1" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="UNI_CITY">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="8" />
+    <Property Name="Author_Id" Type="int" />
+    <Property Name="Update_Author_Id" Type="int" />
+    <Property Name="Entry_Date" Type="smalldatetime" />
+    <Property Name="update_entry_date" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Uni_Product">
+    <Key>
+      <PropertyRef Name="prod_id" />
+    </Key>
+    <Property Name="prod_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prod_name" Type="varchar" MaxLength="35" />
+    <Property Name="Prod_Cat_Id" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Prod_Unit" Type="varchar" MaxLength="20" />
+    <Property Name="Prod_Desc" Type="varchar" MaxLength="500" />
+    <Property Name="Image1" Type="varchar(max)" />
+    <Property Name="Restaurant_Id" Type="int" />
+    <Property Name="Author_Id" Type="int" />
+    <Property Name="Update_Author_Id" Type="int" />
+    <Property Name="Entry_date" Type="smalldatetime" />
+    <Property Name="update_entry_date" Type="smalldatetime" />
+    <Property Name="Prod_Status" Type="varchar" MaxLength="8" />
+    <Property Name="prepration_time" Type="int" />
+    <Property Name="prepration_uom" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="uni_Restaurant">
+    <Key>
+      <PropertyRef Name="res_id" />
+    </Key>
+    <Property Name="res_id" Type="int" Nullable="false" />
+    <Property Name="Restaurant_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Contact_person_name" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="city_id" Type="int" />
+    <Property Name="State_id" Type="int" />
+    <Property Name="Area_Id" Type="int" />
+    <Property Name="Country_Id" Type="int" />
+    <Property Name="Primary_Phone" Type="varchar" MaxLength="10" />
+    <Property Name="Secondary_Phone" Type="varchar" MaxLength="10" />
+    <Property Name="Primary_Email_Id" Type="varchar" MaxLength="50" />
+    <Property Name="Secondary_Email_Id" Type="varchar" MaxLength="50" />
+    <Property Name="URL" Type="varchar" MaxLength="70" />
+    <Property Name="Rating" Type="char" MaxLength="5" />
+    <Property Name="Rest_Dur" Type="varchar" MaxLength="10" />
+    <Property Name="Rest_Per" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Res_Status" Type="varchar" MaxLength="8" />
+    <Property Name="entry_date" Type="smalldatetime" />
+    <Property Name="update_entry_date" Type="smalldatetime" />
+    <Property Name="Author_id" Type="int" />
+    <Property Name="update_author_id" Type="int" />
+    <Property Name="latitude" Type="varchar" MaxLength="20" />
+    <Property Name="longitude" Type="varchar" MaxLength="20" />
+    <Property Name="Verify_By" Type="int" />
+    <Property Name="verify_rem" Type="varchar" MaxLength="300" />
+    <Property Name="fin_id" Type="int" />
+    <Property Name="restaurant_Logo" Type="varchar(max)" />
+    <Property Name="user_id" Type="varchar" MaxLength="10" />
+    <Property Name="pass1" Type="varchar" MaxLength="10" />
+    <Property Name="confirm_pass" Type="varchar" MaxLength="10" />
+    <Property Name="Commission_Given" Type="decimal" Precision="4" Scale="2" />
+    <Property Name="Dispatch_Provider" Type="char" MaxLength="3" />
+    <Property Name="Trending_Brand" Type="varchar(max)" />
+    <Property Name="res_display_img" Type="varchar(max)" />
+    <Property Name="Rest_open_time" Type="varchar" MaxLength="20" />
+    <Property Name="Rest_Open_mes" Type="char" MaxLength="2" />
+    <Property Name="Rest_close_time" Type="varchar" MaxLength="20" />
+    <Property Name="Rest_close_mes" Type="char" MaxLength="2" />
+    <Property Name="Category_Name" Type="varchar" MaxLength="300" />
+    <Property Name="Discount" Type="int" />
+  </EntityType>
+  <EntityType Name="uni_state">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Name="state_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="State_name" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="8" />
+    <Property Name="Author_id" Type="int" />
+    <Property Name="update_author_id" Type="int" />
+    <Property Name="Entry_date" Type="smalldatetime" />
+    <Property Name="update_entry_date" Type="smalldatetime" />
+  </EntityType>
+  <EntityContainer Name="s_foodModelStoreContainer">
+    <EntitySet Name="App_Manage_Order" EntityType="Self.App_Manage_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UNI_CATEGORY" EntityType="Self.UNI_CATEGORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UNI_CITY" EntityType="Self.UNI_CITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Uni_Product" EntityType="Self.Uni_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="uni_Restaurant" EntityType="Self.uni_Restaurant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="uni_state" EntityType="Self.uni_state" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="uni_area" EntityType="Self.uni_area" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [uni_area].[Area_id] AS [Area_id], 
+    [uni_area].[Area_name] AS [Area_name], 
+    [uni_area].[status] AS [status], 
+    [uni_area].[author_id] AS [author_id], 
+    [uni_area].[update_author_id] AS [update_author_id], 
+    [uni_area].[entry_date] AS [entry_date], 
+    [uni_area].[update_entry_date] AS [update_entry_date]
+    FROM [dbo].[uni_area] AS [uni_area]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

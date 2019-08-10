@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="s_foodModelStoreContainer" CdmEntityContainer="s_foodEntities1">
+    <EntitySetMapping Name="uni_Restaurant">
+      <EntityTypeMapping TypeName="s_foodModel.uni_Restaurant">
+        <MappingFragment StoreEntitySet="uni_Restaurant">
+          <ScalarProperty Name="res_id" ColumnName="res_id" />
+          <ScalarProperty Name="Restaurant_Name" ColumnName="Restaurant_Name" />
+          <ScalarProperty Name="Contact_person_name" ColumnName="Contact_person_name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="State_id" ColumnName="State_id" />
+          <ScalarProperty Name="Area_Id" ColumnName="Area_Id" />
+          <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+          <ScalarProperty Name="Primary_Phone" ColumnName="Primary_Phone" />
+          <ScalarProperty Name="Secondary_Phone" ColumnName="Secondary_Phone" />
+          <ScalarProperty Name="Primary_Email_Id" ColumnName="Primary_Email_Id" />
+          <ScalarProperty Name="Secondary_Email_Id" ColumnName="Secondary_Email_Id" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Rest_Dur" ColumnName="Rest_Dur" />
+          <ScalarProperty Name="Rest_Per" ColumnName="Rest_Per" />
+          <ScalarProperty Name="Res_Status" ColumnName="Res_Status" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+          <ScalarProperty Name="update_entry_date" ColumnName="update_entry_date" />
+          <ScalarProperty Name="Author_id" ColumnName="Author_id" />
+          <ScalarProperty Name="update_author_id" ColumnName="update_author_id" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="Verify_By" ColumnName="Verify_By" />
+          <ScalarProperty Name="verify_rem" ColumnName="verify_rem" />
+          <ScalarProperty Name="fin_id" ColumnName="fin_id" />
+          <ScalarProperty Name="restaurant_Logo" ColumnName="restaurant_Logo" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="pass1" ColumnName="pass1" />
+          <ScalarProperty Name="confirm_pass" ColumnName="confirm_pass" />
+          <ScalarProperty Name="Commission_Given" ColumnName="Commission_Given" />
+          <ScalarProperty Name="Dispatch_Provider" ColumnName="Dispatch_Provider" />
+          <ScalarProperty Name="Trending_Brand" ColumnName="Trending_Brand" />
+          <ScalarProperty Name="res_display_img" ColumnName="res_display_img" />
+          <ScalarProperty Name="Rest_open_time" ColumnName="Rest_open_time" />
+          <ScalarProperty Name="Rest_Open_mes" ColumnName="Rest_Open_mes" />
+          <ScalarProperty Name="Rest_close_time" ColumnName="Rest_close_time" />
+          <ScalarProperty Name="Rest_close_mes" ColumnName="Rest_close_mes" />
+          <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UNI_CITY">
+      <EntityTypeMapping TypeName="s_foodModel.UNI_CITY">
+        <MappingFragment StoreEntitySet="UNI_CITY">
+          <ScalarProperty Name="update_entry_date" ColumnName="update_entry_date" />
+          <ScalarProperty Name="Entry_Date" ColumnName="Entry_Date" />
+          <ScalarProperty Name="Update_Author_Id" ColumnName="Update_Author_Id" />
+          <ScalarProperty Name="Author_Id" ColumnName="Author_Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uni_state">
+      <EntityTypeMapping TypeName="s_foodModel.uni_state">
+        <MappingFragment StoreEntitySet="uni_state">
+          <ScalarProperty Name="update_entry_date" ColumnName="update_entry_date" />
+          <ScalarProperty Name="Entry_date" ColumnName="Entry_date" />
+          <ScalarProperty Name="update_author_id" ColumnName="update_author_id" />
+          <ScalarProperty Name="Author_id" ColumnName="Author_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="State_name" ColumnName="State_name" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uni_area">
+      <EntityTypeMapping TypeName="s_foodModel.uni_area">
+        <MappingFragment StoreEntitySet="uni_area">
+          <ScalarProperty Name="update_entry_date" ColumnName="update_entry_date" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+          <ScalarProperty Name="update_author_id" ColumnName="update_author_id" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Area_name" ColumnName="Area_name" />
+          <ScalarProperty Name="Area_id" ColumnName="Area_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="App_Manage_Order">
+      <EntityTypeMapping TypeName="s_foodModel.App_Manage_Order">
+        <MappingFragment StoreEntitySet="App_Manage_Order">
+          <ScalarProperty Name="Delivered_Time" ColumnName="Delivered_Time" />
+          <ScalarProperty Name="Payment_Transaction_Status" ColumnName="Payment_Transaction_Status" />
+          <ScalarProperty Name="Tot_Bill_Bal_Vendor" ColumnName="Tot_Bill_Bal_Vendor" />
+          <ScalarProperty Name="Tot_Bill_Recv_Vendor" ColumnName="Tot_Bill_Recv_Vendor" />
+          <ScalarProperty Name="ORDER_TIME" ColumnName="ORDER_TIME" />
+          <ScalarProperty Name="Promo_code" ColumnName="Promo_code" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="OTP_no" ColumnName="OTP_no" />
+          <ScalarProperty Name="Delivery_Charges" ColumnName="Delivery_Charges" />
+          <ScalarProperty Name="flag_delivery_boy" ColumnName="flag_delivery_boy" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="fin_id" ColumnName="fin_id" />
+          <ScalarProperty Name="update_entry_date" ColumnName="update_entry_date" />
+          <ScalarProperty Name="Entry_Date" ColumnName="Entry_Date" />
+          <ScalarProperty Name="Update_Author_Id" ColumnName="Update_Author_Id" />
+          <ScalarProperty Name="Author_Id" ColumnName="Author_Id" />
+          <ScalarProperty Name="Estimate_time" ColumnName="Estimate_time" />
+          <ScalarProperty Name="Recd_Amt" ColumnName="Recd_Amt" />
+          <ScalarProperty Name="Refund_Amt" ColumnName="Refund_Amt" />
+          <ScalarProperty Name="Tot_Tax" ColumnName="Tot_Tax" />
+          <ScalarProperty Name="Tot_Discount" ColumnName="Tot_Discount" />
+          <ScalarProperty Name="Tot_Bill_Amt" ColumnName="Tot_Bill_Amt" />
+          <ScalarProperty Name="Order_delivery_status" ColumnName="Order_delivery_status" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+          <ScalarProperty Name="delivery_boy_id" ColumnName="delivery_boy_id" />
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uni_Product">
+      <EntityTypeMapping TypeName="s_foodModel.Uni_Product">
+        <MappingFragment StoreEntitySet="Uni_Product">
+          <ScalarProperty Name="prepration_uom" ColumnName="prepration_uom" />
+          <ScalarProperty Name="prepration_time" ColumnName="prepration_time" />
+          <ScalarProperty Name="Prod_Status" ColumnName="Prod_Status" />
+          <ScalarProperty Name="update_entry_date" ColumnName="update_entry_date" />
+          <ScalarProperty Name="Entry_date" ColumnName="Entry_date" />
+          <ScalarProperty Name="Update_Author_Id" ColumnName="Update_Author_Id" />
+          <ScalarProperty Name="Author_Id" ColumnName="Author_Id" />
+          <ScalarProperty Name="Restaurant_Id" ColumnName="Restaurant_Id" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="Prod_Desc" ColumnName="Prod_Desc" />
+          <ScalarProperty Name="Prod_Unit" ColumnName="Prod_Unit" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Prod_Cat_Id" ColumnName="Prod_Cat_Id" />
+          <ScalarProperty Name="Prod_name" ColumnName="Prod_name" />
+          <ScalarProperty Name="prod_id" ColumnName="prod_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UNI_CATEGORY">
+      <EntityTypeMapping TypeName="s_foodModel.UNI_CATEGORY">
+        <MappingFragment StoreEntitySet="UNI_CATEGORY">
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="update_entry_date" ColumnName="update_entry_date" />
+          <ScalarProperty Name="Entry_Date" ColumnName="Entry_Date" />
+          <ScalarProperty Name="Update_Author_Id" ColumnName="Update_Author_Id" />
+          <ScalarProperty Name="Author_id" ColumnName="Author_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+          <ScalarProperty Name="Category_id" ColumnName="Category_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

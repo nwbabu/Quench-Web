@@ -1,0 +1,276 @@
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\csc.exe
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\System.Collections.Immutable.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\System.Reflection.Metadata.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\vbc.exe
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\VBCSCompiler.exe
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\roslyn\VBCSCompiler.exe.config
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Quenchhunger.dll.config
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Quenchhunger.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Quenchhunger.pdb
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Antlr3.Runtime.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\EntityFramework.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\EntityFramework.SqlServer.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.Core.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Cookies.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Facebook.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Google.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.OAuth.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Twitter.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Web.Infrastructure.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Newtonsoft.Json.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Owin.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.Helpers.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.Mvc.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.Optimization.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.Razor.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.Deployment.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.Razor.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\WebGrease.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.Helpers.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.Mvc.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.Optimization.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.Razor.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.Deployment.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.Razor.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Antlr3.Runtime.pdb
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Newtonsoft.Json.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\EntityFramework.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\EntityFramework.SqlServer.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.Core.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Facebook.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Cookies.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.OAuth.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Google.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Twitter.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\bitbucket\Quenchhunger\Quenchhunger\obj\Debug\Quenchhunger.dll
+D:\bitbucket\Quenchhunger\Quenchhunger\obj\Debug\Quenchhunger.pdb
+D:\bitbucket\Quenchhunger\Quenchhunger\obj\Debug\Quenchhunger.csprojResolveAssemblyReference.cache
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\csc.exe
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\System.Collections.Immutable.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\System.Reflection.Metadata.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\vbc.exe
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\VBCSCompiler.exe
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\roslyn\VBCSCompiler.exe.config
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Quenchhunger.dll.config
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Quenchhunger.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Quenchhunger.pdb
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Antlr3.Runtime.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\EntityFramework.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\EntityFramework.SqlServer.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.Core.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Cookies.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Facebook.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Google.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.OAuth.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Twitter.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Web.Infrastructure.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Newtonsoft.Json.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Owin.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.Helpers.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.Mvc.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.Optimization.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.Razor.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.Deployment.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.Razor.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\WebGrease.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.Helpers.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.Mvc.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.Optimization.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.Razor.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.Deployment.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\System.Web.WebPages.Razor.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Antlr3.Runtime.pdb
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Newtonsoft.Json.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\EntityFramework.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\EntityFramework.SqlServer.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.Core.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Facebook.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Cookies.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.OAuth.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Google.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.Twitter.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\obj\Debug\Quenchhunger.csprojResolveAssemblyReference.cache
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\obj\Debug\Quenchhunger.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\Quenchhunger\Quenchhunger\obj\Debug\Quenchhunger.pdb
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\csc.exe
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\System.Collections.Immutable.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\System.Reflection.Metadata.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\vbc.exe
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\VBCSCompiler.exe
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\roslyn\VBCSCompiler.exe.config
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Quenchhunger.dll.config
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Quenchhunger.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Quenchhunger.pdb
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Antlr3.Runtime.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\EntityFramework.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\EntityFramework.SqlServer.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.Core.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Cookies.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Facebook.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Google.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.OAuth.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Twitter.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Web.Infrastructure.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Newtonsoft.Json.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Owin.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.Helpers.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.Mvc.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.Optimization.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.Razor.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.Deployment.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.Razor.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\WebGrease.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.Helpers.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.Mvc.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.Optimization.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.Razor.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.Deployment.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.Razor.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Antlr3.Runtime.pdb
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Newtonsoft.Json.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\EntityFramework.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\EntityFramework.SqlServer.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.Core.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Facebook.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Cookies.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.OAuth.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Google.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Twitter.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\obj\Debug\Quenchhunger.csprojResolveAssemblyReference.cache
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\obj\Debug\Quenchhunger.dll
+E:\FOOD\QuenchHunger Project\QuenchHunger WebSit\QuenchhungerEntity\Quenchhunger\obj\Debug\Quenchhunger.pdb
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\csc.exe
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\System.Collections.Immutable.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\System.Reflection.Metadata.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\vbc.exe
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\VBCSCompiler.exe
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\roslyn\VBCSCompiler.exe.config
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Quenchhunger.dll.config
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Quenchhunger.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Quenchhunger.pdb
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Antlr3.Runtime.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\EntityFramework.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\EntityFramework.SqlServer.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.Core.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Cookies.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Facebook.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Google.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.OAuth.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Twitter.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Web.Infrastructure.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Newtonsoft.Json.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Owin.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.Helpers.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.Mvc.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.Optimization.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.Razor.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.Deployment.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.Razor.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\WebGrease.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.Helpers.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.Mvc.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.Optimization.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.Razor.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.Deployment.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\System.Web.WebPages.Razor.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Antlr3.Runtime.pdb
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Newtonsoft.Json.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\EntityFramework.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\EntityFramework.SqlServer.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.Core.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Facebook.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Cookies.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.OAuth.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Google.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.Twitter.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\obj\Debug\Quenchhunger.csprojResolveAssemblyReference.cache
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\obj\Debug\Quenchhunger.dll
+D:\bitbucket\QuenchhungerEntity\Quenchhunger\obj\Debug\Quenchhunger.pdb

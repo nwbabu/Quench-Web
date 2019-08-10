@@ -1,0 +1,95 @@
+﻿@using Quenchhunger.Models;
+@*@Html.Action("categoryRestaurants", "Home")*@
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
+    <div class="sidebar clearfix m-b-20">
+        <form>
+            <div class="main-block">
+                <div class="sidebar-title white-txt">
+                    <h6>Choose Cusine</h6> <i class="fa fa-cutlery pull-right"></i>
+                </div>
+
+
+                <ul>
+                    @foreach (var item in Model.foodCat)
+                    {
+                        <li>
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" id="check_@item.id" class="custom-control-input" checked="@item.IsChecked">
+                                @*@Html.CheckBox("chechId", new {  htmlAttributes = new { @class = "custom-control-input" , data_url = Url.Action("categoryRestaurants", "Home") } })*@
+                                @*@Html.CheckBoxFor(modelItem => item.Claimed, new { id = item.Macro_Name, data_url = Url.Action("ToggleClaim", "MacroStatus") })*@
+                               
+                                @item.Name
+                            </label>
+                        </li>
+                    }
+                </ul>
+
+                <div class="clearfix"></div>
+            </div>
+            <!-- end:Sidebar nav -->
+            <div class="widget clearfix">
+                <!-- /widget heading -->
+                <div class="widget-heading">
+                    <h3 class="widget-title text-dark">
+                        Price range
+                    </h3>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget-body">
+                    <div class="range-slider m-b-10">
+                        <span id="ex2CurrentSliderValLabel"> Filter by price:<span id="ex2SliderVal"><strong>35</strong></span>€</span>
+                        <br>
+                        <input id="ex2" type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="35" />
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-success active" value="Apply Filter" />
+        </form>
+    </div>
+   
+    <!-- end:Pricing widget -->
+    <div class="widget clearfix">
+        <!-- /widget heading -->
+        <div class="widget-heading">
+            <h3 class="widget-title text-dark">
+                Popular tags
+            </h3>
+            <div class="clearfix"></div>
+        </div>
+        <div class="widget-body">
+            <ul class="tags">
+                <li>
+                    <a href="#" class="tag">
+                        Pizza
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="tag">
+                        Sendwich
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="tag">
+                        Sendwich
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="tag">
+                        Fish
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="tag">
+                        Desert
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="tag">
+                        Salad
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- end:Widget -->
+</div>

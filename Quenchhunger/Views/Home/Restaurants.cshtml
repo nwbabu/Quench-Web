@@ -1,0 +1,71 @@
+﻿
+@using Quenchhunger.Models;
+@Model Quenchhunger.Models.Restrurnat;
+<div class="page-wrapper">
+    <!-- top Links -->
+    @Html.Action("banner", "Home")
+    <section class="restaurants-page">
+        <div class="container">
+            <div class="row">
+                @Html.Action("category", "Home")
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
+                    @foreach (var item in Model.resDetails)
+                    {
+                        <div class="bg-gray restaurant-entry">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
+                                    <div class="entry-logo">
+                                        <a class="img-fluid" href="#">
+                                            <img src=@item.res_display_img alt="Food logo">
+                                        </a>
+                                    </div>
+                                    <!-- end:Logo -->
+                                    <div class="entry-dscr">
+                                        <h5><a href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })'>@item.Restaurant_Name</a></h5>
+                                        <span>
+                                            @item.Category_Name
+                                            <a href="#">...</a>
+                                        </span>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-check"></i> Min NGN 10,00</li>
+                                            <li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
+                                        </ul>
+                                    </div>
+                                    <!-- end:Entry description -->
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
+                                    <div class="right-content bg-white">
+                                        <div class="right-review">
+                                            <div class="rating-block"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
+                                            <p> 245 Reviews</p> <a href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })' class="btn theme-btn-dash">View Menu</a>
+                                        </div>
+                                    </div>
+                                    <!-- end:right info -->
+                                </div>
+                            </div>
+                            <!--end:row -->
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+    <script type="text/javascript">
+
+        google.maps.event.addDomListener(window, 'load', function () {
+            var options = {
+                types: ['(cities)'],
+                componentRestrictions: { country: "in" }
+            };
+
+            var input = document.getElementById('Address');
+            var places = new google.maps.places.Autocomplete(input, options);
+
+
+        });
+    </script>
+}
