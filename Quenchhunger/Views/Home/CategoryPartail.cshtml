@@ -15,7 +15,7 @@
                         <li>
                             <label class="custom-control custom-checkbox">
                                 <input type="checkbox" id="check_@item.id" class="custom-control-input" checked="@item.IsChecked">
-                                @*@Html.CheckBox("chechId", new {  htmlAttributes = new { @class = "custom-control-input" , data_url = Url.Action("categoryRestaurants", "Home") } })*@
+                               
                                 @*@Html.CheckBoxFor(modelItem => item.Claimed, new { id = item.Macro_Name, data_url = Url.Action("ToggleClaim", "MacroStatus") })*@
                                
                                 @item.Name
