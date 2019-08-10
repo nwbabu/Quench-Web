@@ -91,6 +91,23 @@ namespace Quenchhunger.Models
                     }).ToList();
             }
         }
+        public Produect getProduct(int productId)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                return context.Uni_Product
+                    .Where(c => c.prod_id == productId)
+                    .Select(x => new Produect()
+                    {
+                        id = x.prod_id,
+                        Name = x.Prod_name,
+                        Description = x.Prod_Desc,
+                        Image = x.Image1,
+                        Price = x.Price.ToString(),
+                        Unit = x.Prod_Unit
+                    }).FirstOrDefault();
+            }
+        }
         public List<Category> getFoodCategory(int resId)
         {
             using (s_foodEntities1 context = new s_foodEntities1())

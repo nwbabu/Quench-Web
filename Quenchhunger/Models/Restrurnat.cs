@@ -36,4 +36,13 @@ namespace Quenchhunger.Models
         public string image { get; set; }
         public bool IsChecked { get; set; }
     }
+    public class CartDetails
+    {
+        public int productId { get; set; }
+        public string prodductName { get; set; }
+        public string productDes { get; set; }
+        public int qty { get; set; }
+        public int price { get; set; }
+  
+    }
 }

@@ -15,7 +15,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
       {
-          <ul class="nav navbar-nav" style="float:right">
+          <ul class="nav navbar-nav" style="float:right; margin-left:10px;">
            
             <li class="active">
                 <a href='@Url.Action("Index", "CheckOut", new { res_id = @Session["cart"], })' class="btn btn-info btn-lg">

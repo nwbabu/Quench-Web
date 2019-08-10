@@ -87,20 +87,5 @@ namespace Quenchhunger.Controllers
         {
             return PartialView("Banner");
         }
-        //public ActionResult categoryRestaurants()
-        //{
-        //    try
-        //    {
-        //        string category = Request.QueryString["res_id"].ToString();
-        //        TempData["res_id"] = category;
-        //        TempData.Keep();
-        //        restaurant.resDetails = quenchData.getRestaurant(category);
-        //        return View(restaurant);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return View();
-        //    }
-        //}
     }
 }
