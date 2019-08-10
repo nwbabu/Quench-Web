@@ -18,7 +18,7 @@
           <ul class="nav navbar-nav" style="float:right">
            
             <li class="active">
-                <a href="#" class="btn btn-info btn-lg">
+                <a href='@Url.Action("Index", "CheckOut", new { res_id = @Session["cart"], })' class="btn btn-info btn-lg">
                     <span class="glyphicon glyphicon-shopping-cart" style="color:green">
                     </span>Cart <span class="badge">@Session["cart"]</span>
                 </a>
