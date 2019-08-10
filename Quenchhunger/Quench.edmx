@@ -40,25 +40,7 @@
           <Property Name="Delivered_Time" Type="smalldatetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Food_new.dbo.App_Manage_Order_Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="App_Manage_Order_Detail">
-          <Key>
-            <PropertyRef Name="srno" />
-          </Key>
-          <Property Name="srno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="order_id" Type="int" />
-          <Property Name="prod_id" Type="int" />
-          <Property Name="qty" Type="int" />
-          <Property Name="bill_amt" Type="decimal" Precision="7" Scale="2" />
-          <Property Name="tax_per" Type="decimal" Precision="5" Scale="2" />
-          <Property Name="tax_amt" Type="decimal" Precision="7" Scale="2" />
-          <Property Name="Total_bill_amt" Type="decimal" Precision="7" Scale="2" />
-          <Property Name="fin_id" Type="nchar" MaxLength="10" />
-          <Property Name="qty_mes" Type="varchar" MaxLength="15" />
-          <Property Name="Order_delivery_status" Type="varchar" MaxLength="10" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Food_new.dbo.uni_area' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="uni_area">
           <Key>
             <PropertyRef Name="Area_id" />
@@ -116,10 +98,11 @@ warning 6002: The table/view 'Food_new.dbo.uni_area' does not have a primary key
           <Property Name="prepration_time" Type="int" />
           <Property Name="prepration_uom" Type="varchar" MaxLength="15" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'Food_new.dbo.uni_Restaurant' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="uni_Restaurant">
-          <Property Name="res_id" Type="int" />
+          <Key>
+            <PropertyRef Name="res_id" />
+          </Key>
+          <Property Name="res_id" Type="int" Nullable="false" />
           <Property Name="Restaurant_Name" Type="varchar" MaxLength="50" />
           <Property Name="Contact_person_name" Type="varchar" MaxLength="50" />
           <Property Name="Address" Type="varchar" MaxLength="200" />
@@ -159,7 +142,7 @@ warning 6013: The table/view 'Food_new.dbo.uni_Restaurant' does not have a prima
           <Property Name="Rest_close_mes" Type="char" MaxLength="2" />
           <Property Name="Category_Name" Type="varchar" MaxLength="300" />
           <Property Name="Discount" Type="int" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="uni_state">
           <Key>
             <PropertyRef Name="state_id" />
@@ -177,22 +160,8 @@ warning 6013: The table/view 'Food_new.dbo.uni_Restaurant' does not have a prima
           <EntitySet Name="UNI_CATEGORY" EntityType="Self.UNI_CATEGORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UNI_CITY" EntityType="Self.UNI_CITY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Uni_Product" EntityType="Self.Uni_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="uni_Restaurant" EntityType="Self.uni_Restaurant" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="uni_state" EntityType="Self.uni_state" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="App_Manage_Order_Detail" EntityType="Self.App_Manage_Order_Detail" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [App_Manage_Order_Detail].[srno] AS [srno], 
-    [App_Manage_Order_Detail].[order_id] AS [order_id], 
-    [App_Manage_Order_Detail].[prod_id] AS [prod_id], 
-    [App_Manage_Order_Detail].[qty] AS [qty], 
-    [App_Manage_Order_Detail].[bill_amt] AS [bill_amt], 
-    [App_Manage_Order_Detail].[tax_per] AS [tax_per], 
-    [App_Manage_Order_Detail].[tax_amt] AS [tax_amt], 
-    [App_Manage_Order_Detail].[Total_bill_amt] AS [Total_bill_amt], 
-    [App_Manage_Order_Detail].[fin_id] AS [fin_id], 
-    [App_Manage_Order_Detail].[qty_mes] AS [qty_mes], 
-    [App_Manage_Order_Detail].[Order_delivery_status] AS [Order_delivery_status]
-    FROM [dbo].[App_Manage_Order_Detail] AS [App_Manage_Order_Detail]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="uni_area" EntityType="Self.uni_area" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [uni_area].[Area_id] AS [Area_id], 
@@ -262,7 +231,6 @@ warning 6013: The table/view 'Food_new.dbo.uni_Restaurant' does not have a prima
           <EntitySet Name="App_Manage_Order" EntityType="s_foodModel.App_Manage_Order" />
           <EntitySet Name="Uni_Product" EntityType="s_foodModel.Uni_Product" />
           <EntitySet Name="UNI_CATEGORY" EntityType="s_foodModel.UNI_CATEGORY" />
-          <EntitySet Name="App_Manage_Order_Detail" EntityType="s_foodModel.App_Manage_Order_Detail" />
         </EntityContainer>
         <EntityType Name="UNI_CITY">
           <Key>
@@ -367,28 +335,58 @@ warning 6013: The table/view 'Food_new.dbo.uni_Restaurant' does not have a prima
           <Property Name="update_entry_date" Type="DateTime" Precision="0" />
           <Property Name="Image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="App_Manage_Order_Detail">
-          <Key>
-            <PropertyRef Name="srno" />
-          </Key>
-          <Property Name="srno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="order_id" Type="Int32" />
-          <Property Name="prod_id" Type="Int32" />
-          <Property Name="qty" Type="Int32" />
-          <Property Name="bill_amt" Type="Decimal" Precision="7" Scale="2" />
-          <Property Name="tax_per" Type="Decimal" Precision="5" Scale="2" />
-          <Property Name="tax_amt" Type="Decimal" Precision="7" Scale="2" />
-          <Property Name="Total_bill_amt" Type="Decimal" Precision="7" Scale="2" />
-          <Property Name="fin_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="qty_mes" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="Order_delivery_status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="s_foodModelStoreContainer" CdmEntityContainer="s_foodEntities1">
+          <EntitySetMapping Name="uni_Restaurant">
+            <EntityTypeMapping TypeName="s_foodModel.uni_Restaurant">
+              <MappingFragment StoreEntitySet="uni_Restaurant">
+                <ScalarProperty Name="res_id" ColumnName="res_id" />
+                <ScalarProperty Name="Restaurant_Name" ColumnName="Restaurant_Name" />
+                <ScalarProperty Name="Contact_person_name" ColumnName="Contact_person_name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="State_id" ColumnName="State_id" />
+                <ScalarProperty Name="Area_Id" ColumnName="Area_Id" />
+                <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+                <ScalarProperty Name="Primary_Phone" ColumnName="Primary_Phone" />
+                <ScalarProperty Name="Secondary_Phone" ColumnName="Secondary_Phone" />
+                <ScalarProperty Name="Primary_Email_Id" ColumnName="Primary_Email_Id" />
+                <ScalarProperty Name="Secondary_Email_Id" ColumnName="Secondary_Email_Id" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Rest_Dur" ColumnName="Rest_Dur" />
+                <ScalarProperty Name="Rest_Per" ColumnName="Rest_Per" />
+                <ScalarProperty Name="Res_Status" ColumnName="Res_Status" />
+                <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+                <ScalarProperty Name="update_entry_date" ColumnName="update_entry_date" />
+                <ScalarProperty Name="Author_id" ColumnName="Author_id" />
+                <ScalarProperty Name="update_author_id" ColumnName="update_author_id" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="Verify_By" ColumnName="Verify_By" />
+                <ScalarProperty Name="verify_rem" ColumnName="verify_rem" />
+                <ScalarProperty Name="fin_id" ColumnName="fin_id" />
+                <ScalarProperty Name="restaurant_Logo" ColumnName="restaurant_Logo" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="pass1" ColumnName="pass1" />
+                <ScalarProperty Name="confirm_pass" ColumnName="confirm_pass" />
+                <ScalarProperty Name="Commission_Given" ColumnName="Commission_Given" />
+                <ScalarProperty Name="Dispatch_Provider" ColumnName="Dispatch_Provider" />
+                <ScalarProperty Name="Trending_Brand" ColumnName="Trending_Brand" />
+                <ScalarProperty Name="res_display_img" ColumnName="res_display_img" />
+                <ScalarProperty Name="Rest_open_time" ColumnName="Rest_open_time" />
+                <ScalarProperty Name="Rest_Open_mes" ColumnName="Rest_Open_mes" />
+                <ScalarProperty Name="Rest_close_time" ColumnName="Rest_close_time" />
+                <ScalarProperty Name="Rest_close_mes" ColumnName="Rest_close_mes" />
+                <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="UNI_CITY">
             <EntityTypeMapping TypeName="s_foodModel.UNI_CITY">
               <MappingFragment StoreEntitySet="UNI_CITY">
@@ -495,23 +493,6 @@ warning 6013: The table/view 'Food_new.dbo.uni_Restaurant' does not have a prima
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
                 <ScalarProperty Name="Category_id" ColumnName="Category_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="App_Manage_Order_Detail">
-            <EntityTypeMapping TypeName="s_foodModel.App_Manage_Order_Detail">
-              <MappingFragment StoreEntitySet="App_Manage_Order_Detail">
-                <ScalarProperty Name="Order_delivery_status" ColumnName="Order_delivery_status" />
-                <ScalarProperty Name="qty_mes" ColumnName="qty_mes" />
-                <ScalarProperty Name="fin_id" ColumnName="fin_id" />
-                <ScalarProperty Name="Total_bill_amt" ColumnName="Total_bill_amt" />
-                <ScalarProperty Name="tax_amt" ColumnName="tax_amt" />
-                <ScalarProperty Name="tax_per" ColumnName="tax_per" />
-                <ScalarProperty Name="bill_amt" ColumnName="bill_amt" />
-                <ScalarProperty Name="qty" ColumnName="qty" />
-                <ScalarProperty Name="prod_id" ColumnName="prod_id" />
-                <ScalarProperty Name="order_id" ColumnName="order_id" />
-                <ScalarProperty Name="srno" ColumnName="srno" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
