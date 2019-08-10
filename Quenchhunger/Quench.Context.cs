@@ -32,5 +32,6 @@ namespace Quenchhunger
         public virtual DbSet<App_Manage_Order> App_Manage_Order { get; set; }
         public virtual DbSet<Uni_Product> Uni_Product { get; set; }
         public virtual DbSet<UNI_CATEGORY> UNI_CATEGORY { get; set; }
+        public virtual DbSet<App_Manage_Order_Detail> App_Manage_Order_Detail { get; set; }
     }
 }
