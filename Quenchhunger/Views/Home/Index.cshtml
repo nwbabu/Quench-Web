@@ -235,7 +235,7 @@
                             </div>
                             <!--end:col -->
                             <div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-                                <h5><a href="profile.html">@item.Restaurant_Name</a></h5> 
+                                <h5><a href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })'>@item.Restaurant_Name</a></h5> 
                                 <span>@item.Category_Name</span>
                                 <div class="bottom-part">
                                     <div class="cost"><i class="fa fa-check"></i> Min NGN 10,00</div>
