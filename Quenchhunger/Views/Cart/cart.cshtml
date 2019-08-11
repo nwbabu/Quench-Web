@@ -40,7 +40,7 @@
                                                     <td>@item.qty</td>
                                                     <td>@item.price</td>
                                                     <td >
-                                                        <a href="#" title="Remove item from cart" >
+                                                        <a href='@Url.Action("RemoveItemFromCart", "Cart", new { itemId = item.productId, })' title="Remove item from cart" >
                                                             <span class="glyphicon glyphicon-trash"></span>
                                                             
                                                         </a>
