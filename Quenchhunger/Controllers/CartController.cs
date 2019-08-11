@@ -6,16 +6,16 @@ using System.Web.Mvc;
 using Quenchhunger.Models;
 namespace Quenchhunger.Controllers
 {
-    public class CheckOutController : Controller
+    public class CartController : Controller
     {
-        // GET: CheckOut
-        public ActionResult Index()
+        // GET: Cart
+        public ActionResult cart()
         {
             cartCheckOut checkout = new cartCheckOut();
             List<CartDetails> cartlist = null;
-            if(Session["cartlist"] != null)
+            if (Session["cartlist"] != null)
             {
-                cartlist= (List<CartDetails>)Session["cartlist"];
+                cartlist = (List<CartDetails>)Session["cartlist"];
                 checkout.cartList = cartlist;
                 checkout.cartTotal = cartlist.Sum(x => x.price);
             }

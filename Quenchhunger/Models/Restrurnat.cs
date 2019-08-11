@@ -43,6 +43,25 @@ namespace Quenchhunger.Models
         public string productDes { get; set; }
         public int qty { get; set; }
         public int price { get; set; }
-  
+
+    }
+    public class cartCheckOut
+    {
+       public  List<CartDetails> cartList { get; set; }
+       public int cartTotal { get; set; }
+       public List<DeliveryAddress> deliveryAddress { get; set; }
+
+    }
+    public class DeliveryAddress
+    {
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string country { get; set; }
+        public string fullAddress { get; set; }
+        public string city { get; set; }
+        public string state { get; set; }
+        public string pincode { get; set; }
+        public string emailAddress { get; set; }
+        public string phone { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿<br />
+﻿@using Quenchhunger.Models;
+<br />
 <div class="container m-t-30">
     <div class="widget clearfix">
         <!-- /widget heading -->
@@ -102,24 +103,45 @@
                             <div class="cart-totals-fields">
                                 <table class="table">
                                     <tbody>
+                                    @if (Model != null && Session["cartlist"] != null)
+                                    {
                                         <tr>
-                                            <td>Cart Subtotal</td>
-                                            <td>$29.00</td>
+                                            <th>
+                                                Name
+                                            </th>
+                                            <th>
+                                                Description
+                                            </th>
+                                            <th>
+                                                Qty
+                                            </th>
+                                            <th>
+                                                Price
+                                            </th>
                                         </tr>
+                                        foreach (var item in Model.cartList)
+                                        {
+                                            <tr>
+                                                <td>@item.prodductName</td>
+                                                <td>@item.productDes</td>
+                                                <td>@item.qty</td>
+                                                <td>@item.price</td>
+                                            </tr>
+                                        }
+
                                         <tr>
-                                            <td>Shipping &amp; Handling</td>
-                                            <td>$2.00</td>
+                                            <td class="text-color"  colspan="2"><strong>Total</strong></td>
+                                            <td class="text-color"  colspan="2" >
+                                            <strong style="margin-left:100px;">@Model.cartTotal</strong>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td class="text-color"><strong>Total</strong></td>
-                                            <td class="text-color"><strong>$31.00</strong></td>
-                                        </tr>
+                                    }
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         <!--cart summary-->
-                        <div class="payment-option" >
+                        <div class="payment-option">
                             <div style="margin-left:200px; margin-top:100px;">
                                 <input type="submit" class="btn btn-success active" value="Pay now" />
                             </div>

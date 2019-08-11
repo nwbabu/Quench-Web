@@ -1,0 +1,174 @@
+﻿@using Quenchhunger.Models;
+<br />
+<br />
+<section class="contact-page inner-page">
+    <div class="container">
+        <div class="row">
+            <!-- REGISTER -->
+            <div class="col-md-8">
+                <div class="widget">
+                    <div class="widget-body">
+                        <!-- Contact form -->
+                        <div class="cart-totals margin-b-20">
+                            <div class="cart-totals-title">
+                                <h4>Cart Summary</h4>
+                            </div>
+                            <div class="cart-totals-fields">
+                                <table class="table">
+                                    <tbody>
+                                        @if (Model != null && Session["cartlist"] != null)
+                                        {
+                                            <tr>
+                                                <th>
+                                                    Name
+                                                </th>
+                                                <th>
+                                                    Description
+                                                </th>
+                                                <th>
+                                                    Qty
+                                                </th>
+                                                <th colspan="2">
+                                                    Price
+                                                </th>
+                                            </tr>
+                                            foreach (var item in Model.cartList)
+                                            {
+                                                <tr>
+                                                    <td>@item.prodductName</td>
+                                                    <td>@item.productDes</td>
+                                                    <td>@item.qty</td>
+                                                    <td>@item.price</td>
+                                                    <td >
+                                                        <a href="#" title="Remove item from cart" >
+                                                            <span class="glyphicon glyphicon-trash"></span>
+                                                            
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
+
+                                            <tr>
+                                                <td class="text-color" colspan="2"><strong>Total</strong></td>
+                                                <td class="text-color" colspan="3">
+                                                    <strong style="margin-left:100px;">@Model.cartTotal</strong>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- End Contact form -->
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-xs-12">
+                            <div style="margin-left:300px;">
+                                <a class="btn btn-lg theme-btn" href='@Url.Action("Index", "CheckOut")'>
+                                    Checkout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: Widget -->
+            </div>
+            <!-- /REGISTER -->
+            <!-- WHY? -->
+            <div class="col-md-4">
+                <div class="menu-widget m-b-30">
+                    <div class="widget-heading">
+                        <h3 class="widget-title text-dark">
+                            Food You May Like! <a class="btn btn-link pull-right" data-toggle="collapse" href="#popular" aria-expanded="true">
+                                <i class="fa fa-angle-right pull-right"></i>
+                                <i class="fa fa-angle-down pull-right"></i>
+                            </a>
+                        </h3>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="collapse in" id="1">
+                        <div class="food-item white">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-lg-8">
+                                    <div class="rest-logo pull-left">
+                                        <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/100x80" alt="Food logo"></a>
+                                    </div>
+                                    <!-- end:Logo -->
+                                    <div class="rest-descr">
+                                        <h6><a href="#">Veg Extravaganza</a></h6>
+                                        <p> Burgers, American, Sandwiches, Fast Food, BBQ</p>
+                                    </div>
+                                    <!-- end:Description -->
+                                </div>
+                                <!-- end:col -->
+                                <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">NGN 19.99</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
+                            </div>
+                            <!-- end:row -->
+                        </div>
+                        <!-- end:Food item -->
+                        <div class="food-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-lg-8">
+                                    <div class="rest-logo pull-left">
+                                        <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/100x80" alt="Food logo"></a>
+                                    </div>
+                                    <!-- end:Logo -->
+                                    <div class="rest-descr">
+                                        <h6><a href="#">Veg Extravaganza</a></h6>
+                                        <p> Burgers, American, Sandwiches, Fast Food, BBQ</p>
+                                    </div>
+                                    <!-- end:Description -->
+                                </div>
+                                <!-- end:col -->
+                                <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">NGN 19.99</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
+                            </div>
+                            <!-- end:row -->
+                        </div>
+                        <!-- end:Food item -->
+                        <div class="food-item white">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-lg-8">
+                                    <div class="rest-logo pull-left">
+                                        <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/100x80" alt="Food logo"></a>
+                                    </div>
+                                    <!-- end:Logo -->
+                                    <div class="rest-descr">
+                                        <h6><a href="#">Veg Extravaganza</a></h6>
+                                        <p> Burgers, American, Sandwiches, Fast Food, BBQ</p>
+                                    </div>
+                                    <!-- end:Description -->
+                                </div>
+                                <!-- end:col -->
+                                <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">NGN 19.99</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
+                            </div>
+                            <!-- end:row -->
+                        </div>
+                        <!-- end:Food item -->
+                        <div class="food-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-lg-8">
+                                    <div class="rest-logo pull-left">
+                                        <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/100x80" alt="Food logo"></a>
+                                    </div>
+                                    <!-- end:Logo -->
+                                    <div class="rest-descr">
+                                        <h6><a href="#">Veg Extravaganza</a></h6>
+                                        <p> Burgers, American, Sandwiches, Fast Food, BBQ</p>
+                                    </div>
+                                    <!-- end:Description -->
+                                </div>
+                                <!-- end:col -->
+                                <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">NGN 19.99</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
+                            </div>
+                            <!-- end:row -->
+                        </div>
+                        <!-- end:Food item -->
+                    </div>
+                    <!-- end:Collapse -->
+                </div>
+                <!-- end:Panel -->
+            </div>
+            <!-- /WHY? -->
+        </div>
+    </div>
+</section>
