@@ -39,10 +39,10 @@
                                                     <td>@item.productDes</td>
                                                     <td>@item.qty</td>
                                                     <td>@item.price</td>
-                                                    <td >
-                                                        <a href='@Url.Action("RemoveItemFromCart", "Cart", new { itemId = item.productId, })' title="Remove item from cart" >
+                                                    <td>
+                                                        <a href='@Url.Action("RemoveItemFromCart", "Cart", new { itemId = item.productId, })' title="Remove item from cart">
                                                             <span class="glyphicon glyphicon-trash"></span>
-                                                            
+
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -87,82 +87,37 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="collapse in" id="1">
-                        <div class="food-item white">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-lg-8">
-                                    <div class="rest-logo pull-left">
-                                        <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/100x80" alt="Food logo"></a>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model.resProducts)
+                            {
+                                <div class="food-item white">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-lg-8">
+                                            <div class="rest-logo pull-left">
+                                                <a class="restaurant-logo pull-left" href="#">
+                                                <img src=@item.Image alt="Food logo"></a>
+                                            </div>
+                                            <!-- end:Logo -->
+                                            <div class="rest-descr">
+                                                <h6><a href="#">@item.Name</a></h6>
+                                                <p> @item.Description</p>
+                                            </div>
+                                            <!-- end:Description -->
+                                        </div>
+                                        <!-- end:col -->
+                                        <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info">
+                                            <span class="price pull-left">NGN. @item.Price </span>
+                                            <a href='@Url.Action("AddItem", "Cart", new { itemId = item.id, })' title="Remove item from cart">
+                                                <span class="fa fa-plus-square-o" style="font-size:24px"></span>
+
+                                            </a>
+                                        </div>
                                     </div>
-                                    <!-- end:Logo -->
-                                    <div class="rest-descr">
-                                        <h6><a href="#">Veg Extravaganza</a></h6>
-                                        <p> Burgers, American, Sandwiches, Fast Food, BBQ</p>
-                                    </div>
-                                    <!-- end:Description -->
+                                    <!-- end:row -->
                                 </div>
-                                <!-- end:col -->
-                                <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">NGN 19.99</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
-                            </div>
-                            <!-- end:row -->
-                        </div>
-                        <!-- end:Food item -->
-                        <div class="food-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-lg-8">
-                                    <div class="rest-logo pull-left">
-                                        <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/100x80" alt="Food logo"></a>
-                                    </div>
-                                    <!-- end:Logo -->
-                                    <div class="rest-descr">
-                                        <h6><a href="#">Veg Extravaganza</a></h6>
-                                        <p> Burgers, American, Sandwiches, Fast Food, BBQ</p>
-                                    </div>
-                                    <!-- end:Description -->
-                                </div>
-                                <!-- end:col -->
-                                <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">NGN 19.99</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
-                            </div>
-                            <!-- end:row -->
-                        </div>
-                        <!-- end:Food item -->
-                        <div class="food-item white">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-lg-8">
-                                    <div class="rest-logo pull-left">
-                                        <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/100x80" alt="Food logo"></a>
-                                    </div>
-                                    <!-- end:Logo -->
-                                    <div class="rest-descr">
-                                        <h6><a href="#">Veg Extravaganza</a></h6>
-                                        <p> Burgers, American, Sandwiches, Fast Food, BBQ</p>
-                                    </div>
-                                    <!-- end:Description -->
-                                </div>
-                                <!-- end:col -->
-                                <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">NGN 19.99</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
-                            </div>
-                            <!-- end:row -->
-                        </div>
-                        <!-- end:Food item -->
-                        <div class="food-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-lg-8">
-                                    <div class="rest-logo pull-left">
-                                        <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/100x80" alt="Food logo"></a>
-                                    </div>
-                                    <!-- end:Logo -->
-                                    <div class="rest-descr">
-                                        <h6><a href="#">Veg Extravaganza</a></h6>
-                                        <p> Burgers, American, Sandwiches, Fast Food, BBQ</p>
-                                    </div>
-                                    <!-- end:Description -->
-                                </div>
-                                <!-- end:col -->
-                                <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">NGN 19.99</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
-                            </div>
-                            <!-- end:row -->
-                        </div>
-                        <!-- end:Food item -->
+                            }
+                        }
                     </div>
                     <!-- end:Collapse -->
                 </div>

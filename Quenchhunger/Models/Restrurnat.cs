@@ -10,7 +10,7 @@ namespace Quenchhunger.Models
     {
         public List<Category> foodCat { get; set; }
         public List<ResturantDetails> resDetails { get; set; }
-        public List<Produect> resProduct { get; set; }
+        public List<Product> resProduct { get; set; }
     }
     public class ResturantDetails
     {
@@ -20,7 +20,7 @@ namespace Quenchhunger.Models
         public string res_display_img { get; set; }
         public string Category_Name { get; set; }
     }
-    public class Produect
+    public class Product
     {
         public int id { get; set; }
         public string Name { get; set; }
@@ -48,6 +48,7 @@ namespace Quenchhunger.Models
     public class cartCheckOut
     {
        public  List<CartDetails> cartList { get; set; }
+       public List<Product> resProducts { get; set; }
        public int cartTotal { get; set; }
        public List<DeliveryAddress> deliveryAddress { get; set; }
 

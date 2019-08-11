@@ -23,7 +23,7 @@ namespace Quenchhunger.Controllers
                 cartlist = (List < CartDetails >) Session["cartlist"];
             }
             CartDetails cart;
-            Produect product;
+            Product product;
             int productId = Convert.ToInt32(Request.QueryString["productId"].ToString());
             int res_id = Convert.ToInt32(Session["res_id"].ToString());
             cart = cartlist.Where(x => x.productId == productId).FirstOrDefault();
@@ -39,7 +39,7 @@ namespace Quenchhunger.Controllers
                     productId = product.id,
                     prodductName = product.Name,
                     productDes = product.Description,
-                    price = Convert.ToInt32(double.Parse(product.Price)) * 100,
+                    price = Convert.ToInt32(double.Parse(product.Price)),
                     qty = 1
                 };
                 cartlist.Add(cart);

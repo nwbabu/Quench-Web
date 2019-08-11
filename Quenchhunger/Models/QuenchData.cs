@@ -74,13 +74,13 @@ namespace Quenchhunger.Models
                 return result;
             }
         }
-        public List<Produect> getproduects(int resId)
+        public List<Product> getproduects(int resId)
         {
             using (s_foodEntities1 context = new s_foodEntities1())
             {
                 return context.Uni_Product
                     .Where(c=>c.Restaurant_Id== resId)
-                    .Select(x => new Produect()
+                    .Select(x => new Product()
                     {
                         id = x.prod_id,
                         Name = x.Prod_name,
@@ -91,13 +91,30 @@ namespace Quenchhunger.Models
                     }).ToList();
             }
         }
-        public Produect getProduct(int productId)
+        public List<Product> getTopProduects(int resId)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                return context.Uni_Product
+                    .Where(c => c.Restaurant_Id == resId)
+                    .Select(x => new Product()
+                    {
+                        id = x.prod_id,
+                        Name = x.Prod_name,
+                        Description = x.Prod_Desc,
+                        Image = x.Image1,
+                        Price = x.Price.ToString(),
+                        Unit = x.Prod_Unit
+                    }).Take(10).ToList();
+            }
+        }
+        public Product getProduct(int productId)
         {
             using (s_foodEntities1 context = new s_foodEntities1())
             {
                 return context.Uni_Product
                     .Where(c => c.prod_id == productId)
-                    .Select(x => new Produect()
+                    .Select(x => new Product()
                     {
                         id = x.prod_id,
                         Name = x.Prod_name,
@@ -192,20 +209,6 @@ namespace Quenchhunger.Models
             }
             return obj;
         }
-        //public List<ResturantDetails> getRestaurant(string category)
-        //{
-        //    using (s_foodEntities1 context = new s_foodEntities1())
-        //    {
-        //        return context.uni_Restaurant
-        //            .Where(c => c.Category_Name == category)
-        //            .Select(x => new ResturantDetails()
-        //            {
-        //                res_id = x.res_id,
-        //                Restaurant_Name = x.Restaurant_Name,
-        //                restaurant_Logo = x.restaurant_Logo,
-        //                res_display_img = x.res_display_img
-        //            }).Take(6).ToList();
-        //    }
-        //}
+        
     }
 }
