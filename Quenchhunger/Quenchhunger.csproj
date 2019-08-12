@@ -167,6 +167,9 @@
     <Compile Include="App_Manage_Order.cs">
       <DependentUpon>Quench.tt</DependentUpon>
     </Compile>
+    <Compile Include="App_Manage_Order_Detail.cs">
+      <DependentUpon>Quench.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />

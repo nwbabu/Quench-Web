@@ -40,10 +40,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2013 21:13:40</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>03/02/2015 22:02:26</publishTime>
+      <publishTime>02/03/2015 22:02:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>03/02/2015 22:02:26</publishTime>
+      <publishTime>02/03/2015 22:02:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>04/04/2015 05:37:22</publishTime>
@@ -88,13 +88,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2012 03:53:58</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>08/04/2014 09:03:56</publishTime>
+      <publishTime>04/08/2014 09:03:56</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>11/28/2012 01:30:52</publishTime>
     </File>
     <File Include="bin/Quenchhunger.dll">
-      <publishTime>08/06/2019 09:46:04</publishTime>
+      <publishTime>08/11/2019 18:50:55</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/19/2015 08:49:46</publishTime>
@@ -139,7 +139,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 16:32:18</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>02/12/2014 03:56:04</publishTime>
+      <publishTime>12/02/2014 03:56:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
       <publishTime>01/28/2015 16:32:32</publishTime>
@@ -154,7 +154,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 16:34:30</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>09/11/2013 05:58:38</publishTime>
+      <publishTime>11/09/2013 05:58:38</publishTime>
     </File>
     <File Include="Content/animate.css">
       <publishTime>07/27/2019 20:09:39</publishTime>
@@ -343,7 +343,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/30/2019 08:41:23</publishTime>
     </File>
     <File Include="Quench.edmx.diagram">
-      <publishTime>08/04/2019 12:53:46</publishTime>
+      <publishTime>08/10/2019 16:02:19</publishTime>
     </File>
     <File Include="Quench.tt">
       <publishTime>07/30/2019 08:41:11</publishTime>
@@ -538,7 +538,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2019 17:08:55</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>07/30/2019 10:07:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/ResetPassword.cshtml">
       <publishTime>07/28/2019 17:10:45</publishTime>
@@ -555,26 +555,32 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
       <publishTime>07/27/2019 20:17:49</publishTime>
     </File>
+    <File Include="Views/Cart/cart.cshtml">
+      <publishTime>08/11/2019 18:23:47</publishTime>
+    </File>
+    <File Include="Views/CheckOut/Index.cshtml">
+      <publishTime>08/11/2019 18:46:44</publishTime>
+    </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>07/27/2019 20:17:01</publishTime>
     </File>
     <File Include="Views/Home/Banner.cshtml">
-      <publishTime>08/06/2019 08:57:48</publishTime>
+      <publishTime>06/08/2019 08:57:48</publishTime>
     </File>
     <File Include="Views/Home/CategoryPartail.cshtml">
-      <publishTime>08/06/2019 09:39:50</publishTime>
+      <publishTime>08/10/2019 15:33:10</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
       <publishTime>07/27/2019 20:17:01</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/31/2019 08:35:22</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Home/Restaurants.cshtml">
-      <publishTime>08/06/2019 09:38:16</publishTime>
+      <publishTime>08/07/2019 12:10:44</publishTime>
     </File>
     <File Include="Views/Home/RestaurantsMenu.cshtml">
-      <publishTime>08/06/2019 09:39:58</publishTime>
+      <publishTime>08/10/2019 19:22:15</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>07/27/2019 20:17:50</publishTime>
@@ -601,10 +607,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/27/2019 20:17:50</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/28/2019 16:44:38</publishTime>
+      <publishTime>08/11/2019 11:04:08</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>07/28/2019 17:16:16</publishTime>
+      <publishTime>08/11/2019 11:12:18</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>07/27/2019 20:17:01</publishTime>
@@ -613,7 +619,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/27/2019 20:17:01</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/06/2019 09:46:05</publishTime>
+      <publishTime>08/11/2019 18:50:55</publishTime>
     </File>
   </ItemGroup>
 </Project>

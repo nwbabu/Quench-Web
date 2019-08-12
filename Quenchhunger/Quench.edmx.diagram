@@ -12,6 +12,7 @@
         <EntityTypeShape EntityType="s_foodModel.App_Manage_Order" Width="1.5" PointX="5.375" PointY="4.75" />
         <EntityTypeShape EntityType="s_foodModel.Uni_Product" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="s_foodModel.UNI_CATEGORY" Width="1.5" PointX="7.375" PointY="5.75" />
+        <EntityTypeShape EntityType="s_foodModel.App_Manage_Order_Detail" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

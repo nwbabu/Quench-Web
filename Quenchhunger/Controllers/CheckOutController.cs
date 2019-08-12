@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Quenchhunger.Models;
+using Microsoft.AspNet.Identity;
 namespace Quenchhunger.Controllers
 {
     public class CheckOutController : Controller
@@ -11,15 +12,24 @@ namespace Quenchhunger.Controllers
         // GET: CheckOut
         public ActionResult Index()
         {
-            cartCheckOut checkout = new cartCheckOut();
-            List<CartDetails> cartlist = null;
-            if(Session["cartlist"] != null)
+            if (User.Identity.IsAuthenticated)
             {
-                cartlist= (List<CartDetails>)Session["cartlist"];
-                checkout.cartList = cartlist;
-                checkout.cartTotal = cartlist.Sum(x => x.price);
+                string loginId = User.Identity.GetUserName();
+                cartCheckOut checkout = new cartCheckOut();
+                List<CartDetails> cartlist = null;
+                if (Session["cartlist"] != null)
+                {
+                    cartlist = (List<CartDetails>)Session["cartlist"];
+                    checkout.cartList = cartlist;
+                    checkout.cartTotal = cartlist.Sum(x => x.price);
+                }
+                return View(checkout);
             }
-            return View(checkout);
+            else
+            {
+                string loginId = User.Identity.GetUserName();
+                return RedirectToAction("Login", "Account");
+            }
         }
     }
 }
