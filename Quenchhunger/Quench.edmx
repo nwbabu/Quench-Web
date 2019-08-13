@@ -96,6 +96,22 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <Property Name="Entry_Date" Type="smalldatetime" />
           <Property Name="update_entry_date" Type="smalldatetime" />
         </EntityType>
+        <EntityType Name="UNI_DelveryAddress">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="clientId" Type="varchar" MaxLength="250" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" />
+          <Property Name="country" Type="varchar" MaxLength="50" />
+          <Property Name="fullAddress" Type="varchar" MaxLength="250" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="pincode" Type="varchar" MaxLength="50" />
+          <Property Name="emailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="Uni_Product">
           <Key>
             <PropertyRef Name="prod_id" />
@@ -177,6 +193,7 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <EntitySet Name="App_Manage_Order" EntityType="Self.App_Manage_Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UNI_CATEGORY" EntityType="Self.UNI_CATEGORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UNI_CITY" EntityType="Self.UNI_CITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UNI_DelveryAddress" EntityType="Self.UNI_DelveryAddress" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Uni_Product" EntityType="Self.Uni_Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="uni_Restaurant" EntityType="Self.uni_Restaurant" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="uni_state" EntityType="Self.uni_state" Schema="dbo" store:Type="Tables" />
@@ -265,6 +282,7 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <EntitySet Name="Uni_Product" EntityType="s_foodModel.Uni_Product" />
           <EntitySet Name="UNI_CATEGORY" EntityType="s_foodModel.UNI_CATEGORY" />
           <EntitySet Name="App_Manage_Order_Detail" EntityType="s_foodModel.App_Manage_Order_Detail" />
+          <EntitySet Name="UNI_DelveryAddress" EntityType="s_foodModel.UNI_DelveryAddress" />
         </EntityContainer>
         <EntityType Name="UNI_CITY">
           <Key>
@@ -384,6 +402,22 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <Property Name="fin_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="qty_mes" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="Order_delivery_status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UNI_DelveryAddress">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="clientId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fullAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -560,6 +594,23 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
                 <ScalarProperty Name="prod_id" ColumnName="prod_id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
                 <ScalarProperty Name="srno" ColumnName="srno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UNI_DelveryAddress">
+            <EntityTypeMapping TypeName="s_foodModel.UNI_DelveryAddress">
+              <MappingFragment StoreEntitySet="UNI_DelveryAddress">
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="fullAddress" ColumnName="fullAddress" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="clientId" ColumnName="clientId" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

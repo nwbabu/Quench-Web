@@ -215,6 +215,9 @@
     <Compile Include="UNI_CITY.cs">
       <DependentUpon>Quench.tt</DependentUpon>
     </Compile>
+    <Compile Include="UNI_DelveryAddress.cs">
+      <DependentUpon>Quench.tt</DependentUpon>
+    </Compile>
     <Compile Include="Uni_Product.cs">
       <DependentUpon>Quench.tt</DependentUpon>
     </Compile>
