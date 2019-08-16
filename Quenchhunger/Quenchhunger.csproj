@@ -181,12 +181,14 @@
     <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OTPGenerate.cs" />
     <Compile Include="Models\QuenchData.cs" />
     <Compile Include="Models\Restrurnat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -316,6 +318,7 @@
     <Content Include="Views\CheckOut\Index.cshtml" />
     <Content Include="Views\Cart\cart.cshtml" />
     <Content Include="Views\CheckOut\AddDeliveryAddress.cshtml" />
+    <Content Include="Views\Payment\getParameters.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

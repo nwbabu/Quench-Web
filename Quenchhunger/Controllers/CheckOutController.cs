@@ -49,7 +49,12 @@ namespace Quenchhunger.Controllers
         public ActionResult SaveOrder(FormCollection frm)
         {
             string addressId = frm["address"];
-            return View();
+            Random rng = new Random();
+            //Fetching OTP Characters
+            string OtpCharacters = OTPGenerate.OTPCharacters();
+            //Createing More Secure OTP Password by Using MD5 algorithm
+            string OTPPassword = OTPGenerate.OTPGenerator(OtpCharacters, rng.Next(10).ToString());
+            return RedirectToAction("getParameters", "Payment");
         }
 
     }
