@@ -1,4 +1,7 @@
 ﻿@using Quenchhunger.Models;
+@using System.Web.Mvc.Html;
+@using (Html.BeginForm("SaveOrder", "CheckOut", FormMethod.Post))
+{
 <br />
 <div class="container m-t-30">
     <div class="widget clearfix">
@@ -12,92 +15,41 @@
             <div class="clearfix"></div>
         </div>
         <div class="widget-body">
-            <form method="post" action="#">
+           
                 <div class="row">
                     <div class="col-sm-6 margin-b-30">
                         <div class="row">
-                            <div class="col-sm-6" style="color:forestgreen">
-                                <input type="radio" class ="custom-control-input" checked="checked">
-                                <b> Deliver To</b>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>First Name*</label>
-                                    <input type="text" class="form-control" placeholder="John">
-                                </div>
-                                <!--/form-group-->
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Last Name*</label>
-                                    <input type="text" class="form-control" placeholder="Doe">
-                                </div>
-                                <!--/form-group-->
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Country*</label>
-                                    <select class="form-control">
-                                        <option>Nigeria</option>
-                                        <option>India</option>
-                                        <option>USA</option>
-                                        <option>UK</option>
-                                    </select>
-                                </div>
-                                <!--/form-group-->
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Company Name</label>
-                                    <input type="text" class="form-control" placeholder="Lorem ipsum">
-                                </div>
-                                <!--/form-group-->
+                            <div class="col-sm-12">
+                                
+                                @if (Model != null && Model.deliveryAddress.Count >= 1)
+                                {
+                                    foreach (var item in Model.deliveryAddress)
+                                    {
+                                        <input type="radio" value=@item.id name="address" 
+                                               />
+                                        <label >Deliver To :</label>
+                                        <address style="margin-left:50px;">
+                                            @item.fullAddress
+                                            <br />
+                                            @item.city, @item.state
+                                            <br />
+                                            @item.country, @item.pincode
+                                        </address>
+                                    }
+                                }
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label>Full Address*</label>
-                                    <input type="text" class="form-control" placeholder="124, Lorem Street..">
+
+                                    <a class="btn btn-lg theme-btn" href='@Url.Action("AddDeliveryAddress", "CheckOut")'>
+                                        Add New Delvery Address
+                                    </a>
                                 </div>
                                 <!--/form-group-->
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>City / State*</label>
-                                    <input type="text" class="form-control" placeholder="Jaipur">
-                                </div>
-                                <!--/form-group-->
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Zip/ Postal Code*</label>
-                                    <input type="text" class="form-control" placeholder="302012">
-                                </div>
-                                <!--/form-group-->
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Email Address*</label>
-                                    <input type="text" class="form-control" placeholder="john@doe.com">
-                                </div>
-                                <!--/form-group-->
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>phone*</label>
-                                    <input type="text" class="form-control" placeholder="123-345-3322">
-                                </div>
-                                <!--/form-group-->
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -108,39 +60,39 @@
                             <div class="cart-totals-fields">
                                 <table class="table">
                                     <tbody>
-                                    @if (Model != null && Session["cartlist"] != null)
-                                    {
-                                        <tr>
-                                            <th>
-                                                Name
-                                            </th>
-                                            <th>
-                                                Description
-                                            </th>
-                                            <th>
-                                                Qty
-                                            </th>
-                                            <th>
-                                                Price
-                                            </th>
-                                        </tr>
-                                        foreach (var item in Model.cartList)
+                                        @if (Model != null && Session["cartlist"] != null)
                                         {
                                             <tr>
-                                                <td>@item.prodductName</td>
-                                                <td>@item.productDes</td>
-                                                <td>@item.qty</td>
-                                                <td>@item.price</td>
+                                                <th>
+                                                    Name
+                                                </th>
+                                                <th>
+                                                    Description
+                                                </th>
+                                                <th>
+                                                    Qty
+                                                </th>
+                                                <th>
+                                                    Price
+                                                </th>
+                                            </tr>
+                                            foreach (var item in Model.cartList)
+                                            {
+                                                <tr>
+                                                    <td>@item.prodductName</td>
+                                                    <td>@item.productDes</td>
+                                                    <td>@item.qty</td>
+                                                    <td>@item.price</td>
+                                                </tr>
+                                            }
+
+                                            <tr>
+                                                <td class="text-color" colspan="2"><strong>Total</strong></td>
+                                                <td class="text-color" colspan="2">
+                                                    <strong style="margin-left:115px;">@Model.cartTotal</strong>
+                                                </td>
                                             </tr>
                                         }
-
-                                        <tr>
-                                            <td class="text-color"  colspan="2"><strong>Total</strong></td>
-                                            <td class="text-color"  colspan="2" >
-                                            <strong style="margin-left:100px;">@Model.cartTotal</strong>
-                                            </td>
-                                        </tr>
-                                    }
                                     </tbody>
                                 </table>
                             </div>
@@ -148,12 +100,13 @@
                         <!--cart summary-->
                         <div class="payment-option">
                             <div style="margin-left:200px; margin-top:100px;">
-                                <input type="submit" class="btn btn-success active" value="Pay now" />
+                                <input type="submit" class="btn btn-lg theme-btn" value="Pay now" />
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
+           
         </div>
     </div>
 </div>
+}
