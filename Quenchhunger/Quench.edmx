@@ -100,7 +100,7 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="clientId" Type="varchar" MaxLength="250" />
           <Property Name="firstName" Type="varchar" MaxLength="50" />
           <Property Name="lastName" Type="varchar" MaxLength="50" />

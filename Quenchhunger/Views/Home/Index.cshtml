@@ -16,7 +16,7 @@
                                    type="text" />
                         </div>
                     </div>
-                    <button onclick="location.href='@Url.Action("Restaurants", "Home")?Restaurants=' + document.getElementById('autocomplete').value" type="button" class="btn theme-btn btn-lg">Search food</button>
+                    <button onclick="location.href='@Url.Action("Restaurants", "Home")?Restaurants=' + document.getElementById('autocomplete').value" type="button" class="btn theme-btn btn-lg">Search Restaurants</button>
                 </form>
             </div>
             <div class="steps">
@@ -224,7 +224,7 @@
                     <div class="restaurant-wrap">
                         <div class="row">
                             <div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
-                                <a class="restaurant-logo" href="RestaurantsMenu"> 
+                                <a class="restaurant-logo" href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })'> 
                                 <img src=@item.res_display_img alt="Restaurant logo">
                                 </a>
                             </div>

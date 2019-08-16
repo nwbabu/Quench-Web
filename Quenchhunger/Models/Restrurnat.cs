@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -50,19 +51,30 @@ namespace Quenchhunger.Models
        public  List<CartDetails> cartList { get; set; }
        public List<Product> resProducts { get; set; }
        public int cartTotal { get; set; }
+       public string selectedAddress { get; set; }
        public List<DeliveryAddress> deliveryAddress { get; set; }
 
     }
     public class DeliveryAddress
     {
+      
+        public long id { get; set; }
+        public string clientId { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
-        public string country { get; set; }
+        public Country country { get; set; }
         public string fullAddress { get; set; }
         public string city { get; set; }
         public string state { get; set; }
         public string pincode { get; set; }
         public string emailAddress { get; set; }
         public string phone { get; set; }
+    }
+    public enum Country
+    {
+        India,
+        Nigeria,
+        USA,
+        UK
     }
 }

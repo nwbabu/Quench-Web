@@ -158,6 +158,62 @@ namespace Quenchhunger.Models
                 return result;
             }
         }
+        public bool SaveDeliveryAddress(DeliveryAddress deliveryAddress)
+        {
+            try
+            {
+                using (s_foodEntities1 context = new s_foodEntities1())
+                {
+                    if (!context.UNI_DelveryAddress.Any(Address => Address.fullAddress == deliveryAddress.fullAddress))
+                    {
+                        context.UNI_DelveryAddress.Add(new UNI_DelveryAddress()
+                        {
+                            clientId = deliveryAddress.clientId,
+                            firstName = deliveryAddress.firstName,
+                            lastName = deliveryAddress.lastName,
+                            country = deliveryAddress.country.ToString(),
+                            fullAddress = deliveryAddress.fullAddress,
+                            city = deliveryAddress.city,
+                            state = deliveryAddress.state,
+                            pincode = deliveryAddress.pincode,
+                            emailAddress = deliveryAddress.emailAddress,
+                            phone = deliveryAddress.phone
+                        });
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
+        public List<DeliveryAddress> getDeliveryAddress(string clientId)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                return context.UNI_DelveryAddress
+                       .Where(d => d.clientId == clientId)
+                       .Select(x => new DeliveryAddress()
+                       {
+                           id=x.id,
+                           clientId=x.clientId,
+                           firstName=x.firstName,
+                           lastName=x.lastName,
+                           fullAddress=x.fullAddress,
+                           state=x.state,
+                           city=x.city,
+                           emailAddress=x.emailAddress,
+                           phone=x.phone,
+                           pincode=x.pincode
+                       }).ToList();
+            }
+        }
         public List<ResturantDetails> getTopResturantDetails()
         {
             using (s_foodEntities1 context = new s_foodEntities1())

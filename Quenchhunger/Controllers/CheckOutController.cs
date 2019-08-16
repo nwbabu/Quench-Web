@@ -10,6 +10,7 @@ namespace Quenchhunger.Controllers
     public class CheckOutController : Controller
     {
         // GET: CheckOut
+        QuenchData quenchData = new QuenchData();
         public ActionResult Index()
         {
             if (User.Identity.IsAuthenticated)
@@ -21,6 +22,7 @@ namespace Quenchhunger.Controllers
                 {
                     cartlist = (List<CartDetails>)Session["cartlist"];
                     checkout.cartList = cartlist;
+                    checkout.deliveryAddress = quenchData.getDeliveryAddress(loginId);
                     checkout.cartTotal = cartlist.Sum(x => x.price);
                 }
                 return View(checkout);
@@ -31,5 +33,24 @@ namespace Quenchhunger.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
+        public ActionResult AddDeliveryAddress(DeliveryAddress da)  {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Save(DeliveryAddress address)
+        {
+            address.clientId= User.Identity.GetUserName();
+            quenchData.SaveDeliveryAddress(address);
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult SaveOrder(FormCollection frm)
+        {
+            string addressId = frm["address"];
+            return View();
+        }
+
     }
 }

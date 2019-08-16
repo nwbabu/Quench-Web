@@ -1,0 +1,124 @@
+﻿@using Quenchhunger.Models
+@model Quenchhunger.Models.DeliveryAddress
+@{
+   
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Save", "CheckOut", FormMethod.Post))
+{
+    <br />
+    <div class="container m-t-30">
+        <div class="widget clearfix">
+            <!-- /widget heading -->
+            <div class="widget-heading">
+                <div style="margin-left:500px;">
+                    <h3 class="widget-title text-dark">
+                        Delvery Address
+                    </h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="widget-body">
+
+                <div class="row">
+                    <div class="col-sm-6 margin-b-20" style="margin-left:250px">
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>First Name*</label>
+                                    @Html.TextBoxFor(m => m.firstName, new  {@class= "form-control" })
+                                </div>
+                                <!--/form-group-->
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Last Name*</label>
+                                    @Html.TextBoxFor(m => m.lastName, new { @class = "form-control" })
+                                </div>
+                                <!--/form-group-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Country*</label>
+                                    @Html.DropDownList("country",
+                                   new SelectList(Enum.GetValues(typeof(Country))),
+                                  "Select Country",
+                                  new { @class = "form-control" })
+                                </div>
+                                <!--/form-group-->
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>State*</label>
+                                    @Html.TextBoxFor(m => m.state, new { @class = "form-control" })
+                                </div>
+                                <!--/form-group-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Full Address*</label>
+                                    @Html.TextBoxFor(m => m.fullAddress, new { @class = "form-control" })
+                                </div>
+                                <!--/form-group-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>City </label>
+                                    @Html.TextBoxFor(m => m.city, new { @class = "form-control" })
+                                </div>
+                                <!--/form-group-->
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Zip/ Postal Code*</label>
+                                    @Html.TextBoxFor(m => m.pincode, new { @class = "form-control" })
+                                </div>
+                                <!--/form-group-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Email Address*</label>
+                                    @Html.TextBoxFor(m => m.emailAddress, new { @class = "form-control" })
+                                </div>
+                                <!--/form-group-->
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>phone*</label>
+                                    @Html.TextBoxFor(m => m.phone, new { @class = "form-control" })
+                                </div>
+                                <!--/form-group-->
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-sm-12" style="margin-left:180px">
+                                <div class="form-group">
+                                    <input type="submit" value="Save"  class="btn btn-lg theme-btn"  />
+                                    <a class="btn btn-lg theme-btn" style="margin-left:10px;" href='@Request.UrlReferrer.ToString()'>
+                                        Cancel
+                                    </a>
+                                </div>
+                                <!--/form-group-->
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
