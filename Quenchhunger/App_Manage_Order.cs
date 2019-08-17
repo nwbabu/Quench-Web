@@ -43,5 +43,7 @@ namespace Quenchhunger
         public Nullable<decimal> Tot_Bill_Bal_Vendor { get; set; }
         public string Payment_Transaction_Status { get; set; }
         public Nullable<System.DateTime> Delivered_Time { get; set; }
+    
+        public virtual App_Manage_Client App_Manage_Client { get; set; }
     }
 }

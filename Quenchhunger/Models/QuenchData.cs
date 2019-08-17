@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Web;
 using Quenchhunger.Models;
 
@@ -13,6 +14,7 @@ namespace Quenchhunger.Models
     public class QuenchData
     {
         string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        static object locker = new object();
         public List<ResturantDetails> getResturantDetails(string searchResturnats)
         {
             using (s_foodEntities1 context = new s_foodEntities1())
@@ -64,7 +66,7 @@ namespace Quenchhunger.Models
                               state.State_name.Contains(uniState)
                               select new ResturantDetails
                               {
-                                  res_id=res.res_id,
+                                  res_id = res.res_id,
                                   Restaurant_Name = res.Restaurant_Name,
                                   restaurant_Logo = res.restaurant_Logo,
                                   res_display_img = res.res_display_img,
@@ -79,7 +81,7 @@ namespace Quenchhunger.Models
             using (s_foodEntities1 context = new s_foodEntities1())
             {
                 return context.Uni_Product
-                    .Where(c=>c.Restaurant_Id== resId)
+                    .Where(c => c.Restaurant_Id == resId)
                     .Select(x => new Product()
                     {
                         id = x.prod_id,
@@ -147,13 +149,13 @@ namespace Quenchhunger.Models
             using (s_foodEntities1 context = new s_foodEntities1())
             {
                 var result = (from cat in context.UNI_CATEGORY
-                             
+
                               select new Category
                               {
                                   id = cat.Category_id,
                                   Name = cat.Category_Name,
                                   image = cat.Image1,
-                                  IsChecked=false
+                                  IsChecked = false
                               }).ToList();
                 return result;
             }
@@ -188,9 +190,30 @@ namespace Quenchhunger.Models
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
+            }
+        }
+        public DeliveryAddress getDeliveryAddressById(int id)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                return context.UNI_DelveryAddress
+                      .Where(d => d.id == id)
+                      .Select(x => new DeliveryAddress()
+                      {
+                          id = x.id,
+                          clientId = x.clientId,
+                          firstName = x.firstName,
+                          lastName = x.lastName,
+                          fullAddress = x.fullAddress,
+                          state = x.state,
+                          city = x.city,
+                          emailAddress = x.emailAddress,
+                          phone = x.phone,
+                          pincode = x.pincode
+                      }).FirstOrDefault();
             }
         }
         public List<DeliveryAddress> getDeliveryAddress(string clientId)
@@ -201,18 +224,72 @@ namespace Quenchhunger.Models
                        .Where(d => d.clientId == clientId)
                        .Select(x => new DeliveryAddress()
                        {
-                           id=x.id,
-                           clientId=x.clientId,
-                           firstName=x.firstName,
-                           lastName=x.lastName,
-                           fullAddress=x.fullAddress,
-                           state=x.state,
-                           city=x.city,
-                           emailAddress=x.emailAddress,
-                           phone=x.phone,
-                           pincode=x.pincode
+                           id = x.id,
+                           clientId = x.clientId,
+                           firstName = x.firstName,
+                           lastName = x.lastName,
+                           fullAddress = x.fullAddress,
+                           state = x.state,
+                           city = x.city,
+                           emailAddress = x.emailAddress,
+                           phone = x.phone,
+                           pincode = x.pincode
                        }).ToList();
             }
+        }
+        public bool InsertClientDetails(DeliveryAddress address)
+        {
+            try
+            {
+                using (s_foodEntities1 context = new s_foodEntities1())
+                {
+                    string cust_Address = address.fullAddress + "," + address.city + "," + address.state + "," + address.pincode;
+                    if (!context.App_Manage_Client.Any(x => x.Cust_email == address.emailAddress && x.Cust_Mobile == address.phone))
+                    {
+
+                        context.PUT_Client_Detail(address.clientId, cust_Address, address.phone, address.emailAddress, "", "", "");
+                        return true;
+                    }
+                    else
+                    {
+                        if (!context.App_Manage_Client.Any(x => x.cust_address == cust_Address 
+                        && x.Cust_email==address.emailAddress && x.Cust_Mobile==address.phone))
+                        {
+                            var Client = context.App_Manage_Client.Where(x => x.Cust_Mobile == address.phone &&
+                            x.Cust_email == address.emailAddress)
+                                .FirstOrDefault();
+                            Client.cust_address = cust_Address;
+                            context.SaveChanges();
+                        }
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
+        public int getCustomerId(string emailAddress, string Mobile)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                var result = context.App_Manage_Client.Where(x => x.Cust_email == emailAddress && x.Cust_Mobile == Mobile).
+                             FirstOrDefault();
+                return result.cust_code;
+            }
+        }
+        public bool InsertPaymentDetails(Payement _payment, int custCode)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+
+                context.Put_Payment_Transanction(_payment.MerchantId, _payment.Tranx_id,
+                    Convert.ToInt32(_payment.Order_id), custCode,
+                    Convert.ToDecimal(_payment.Tranx_amt), _payment.Tranx_curr, _payment.Tranx_memo);
+            }
+            return true;
         }
         public List<ResturantDetails> getTopResturantDetails()
         {
@@ -265,6 +342,14 @@ namespace Quenchhunger.Models
             }
             return obj;
         }
-        
+        public string Generate15UniqueDigits()
+        {
+            lock (locker)
+            {
+                Thread.Sleep(100);
+                return DateTime.Now.ToString("yyyyMMddHHmmssf");
+            }
+        }
+
     }
 }

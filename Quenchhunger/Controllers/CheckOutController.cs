@@ -48,7 +48,11 @@ namespace Quenchhunger.Controllers
         [HttpPost]
         public ActionResult SaveOrder(FormCollection frm)
         {
-            string addressId = frm["address"];
+            int  addressId = Convert.ToInt32( frm["address"]);
+            DeliveryAddress delAddress = quenchData.getDeliveryAddressById(addressId);
+            quenchData.InsertClientDetails(delAddress);
+            int cust_code = quenchData.getCustomerId(delAddress.emailAddress, delAddress.phone);
+            Session["cust_code"] = cust_code;
             Random rng = new Random();
             //Fetching OTP Characters
             string OtpCharacters = OTPGenerate.OTPCharacters();

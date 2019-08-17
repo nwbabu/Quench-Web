@@ -5,6 +5,31 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="s_foodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="App_Manage_Client">
+          <Key>
+            <PropertyRef Name="cust_code" />
+          </Key>
+          <Property Name="cust_code" Type="int" Nullable="false" />
+          <Property Name="cust_name" Type="varchar" MaxLength="40" />
+          <Property Name="cust_address" Type="varchar" MaxLength="300" />
+          <Property Name="Cust_Mobile" Type="varchar" MaxLength="10" />
+          <Property Name="Cust_email" Type="varchar" MaxLength="70" />
+          <Property Name="cust_status" Type="int" Nullable="false" />
+          <Property Name="entry_date" Type="smalldatetime" />
+          <Property Name="update_entry_date" Type="smalldatetime" />
+          <Property Name="Latitude" Type="varchar" MaxLength="20" />
+          <Property Name="Longitude" Type="varchar" MaxLength="20" />
+          <Property Name="Loginr_Mode" Type="varchar" MaxLength="20" />
+          <Property Name="Last_Login_time" Type="varchar" MaxLength="20" />
+          <Property Name="Last_Login_Date" Type="smalldatetime" />
+          <Property Name="Country_Code" Type="varchar" MaxLength="5" />
+          <Property Name="Password" Type="varchar" MaxLength="6" />
+          <Property Name="platform" Type="varchar" MaxLength="15" />
+          <Property Name="Device_id" Type="varchar" MaxLength="20" />
+          <Property Name="token_id" Type="varchar(max)" />
+          <Property Name="Social_media_id" Type="varchar" MaxLength="50" />
+          <Property Name="image" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="App_Manage_Order">
           <Key>
             <PropertyRef Name="order_id" />
@@ -189,7 +214,38 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <Property Name="Entry_date" Type="smalldatetime" />
           <Property Name="update_entry_date" Type="smalldatetime" />
         </EntityType>
+        <Association Name="FK_App_Manage_Order_App_Manage_Client">
+          <End Role="App_Manage_Client" Type="Self.App_Manage_Client" Multiplicity="0..1" />
+          <End Role="App_Manage_Order" Type="Self.App_Manage_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Manage_Client">
+              <PropertyRef Name="cust_code" />
+            </Principal>
+            <Dependent Role="App_Manage_Order">
+              <PropertyRef Name="cust_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="PUT_Client_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cust_name" Type="varchar" Mode="In" />
+          <Parameter Name="cust_address" Type="varchar" Mode="In" />
+          <Parameter Name="Cust_Mobile" Type="varchar" Mode="In" />
+          <Parameter Name="Cust_email" Type="varchar" Mode="In" />
+          <Parameter Name="Latitude" Type="varchar" Mode="In" />
+          <Parameter Name="Longitude" Type="varchar" Mode="In" />
+          <Parameter Name="Loginr_Mode" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Put_Payment_Transanction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Merchant_id" Type="varchar" Mode="In" />
+          <Parameter Name="Transaction_id" Type="varchar" Mode="In" />
+          <Parameter Name="Order_Id" Type="int" Mode="In" />
+          <Parameter Name="Cust_Id" Type="int" Mode="In" />
+          <Parameter Name="Transaction_amt" Type="decimal" Mode="In" />
+          <Parameter Name="Transaction_Currency" Type="varchar" Mode="In" />
+          <Parameter Name="tranx_memo" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="s_foodModelStoreContainer">
+          <EntitySet Name="App_Manage_Client" EntityType="Self.App_Manage_Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="App_Manage_Order" EntityType="Self.App_Manage_Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UNI_CATEGORY" EntityType="Self.UNI_CATEGORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UNI_CITY" EntityType="Self.UNI_CITY" Schema="dbo" store:Type="Tables" />
@@ -223,6 +279,10 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
     [uni_area].[update_entry_date] AS [update_entry_date]
     FROM [dbo].[uni_area] AS [uni_area]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_App_Manage_Order_App_Manage_Client" Association="Self.FK_App_Manage_Order_App_Manage_Client">
+            <End Role="App_Manage_Client" EntitySet="App_Manage_Client" />
+            <End Role="App_Manage_Order" EntitySet="App_Manage_Order" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -283,6 +343,29 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <EntitySet Name="UNI_CATEGORY" EntityType="s_foodModel.UNI_CATEGORY" />
           <EntitySet Name="App_Manage_Order_Detail" EntityType="s_foodModel.App_Manage_Order_Detail" />
           <EntitySet Name="UNI_DelveryAddress" EntityType="s_foodModel.UNI_DelveryAddress" />
+          <FunctionImport Name="Put_Payment_Transanction">
+            <Parameter Name="Merchant_id" Mode="In" Type="String" />
+            <Parameter Name="Transaction_id" Mode="In" Type="String" />
+            <Parameter Name="Order_Id" Mode="In" Type="Int32" />
+            <Parameter Name="Cust_Id" Mode="In" Type="Int32" />
+            <Parameter Name="Transaction_amt" Mode="In" Type="Decimal" />
+            <Parameter Name="Transaction_Currency" Mode="In" Type="String" />
+            <Parameter Name="tranx_memo" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="App_Manage_Client" EntityType="s_foodModel.App_Manage_Client" />
+          <AssociationSet Name="FK_App_Manage_Order_App_Manage_Client" Association="s_foodModel.FK_App_Manage_Order_App_Manage_Client">
+            <End Role="App_Manage_Client" EntitySet="App_Manage_Client" />
+            <End Role="App_Manage_Order" EntitySet="App_Manage_Order" />
+          </AssociationSet>
+          <FunctionImport Name="PUT_Client_Detail">
+            <Parameter Name="cust_name" Mode="In" Type="String" />
+            <Parameter Name="cust_address" Mode="In" Type="String" />
+            <Parameter Name="Cust_Mobile" Mode="In" Type="String" />
+            <Parameter Name="Cust_email" Mode="In" Type="String" />
+            <Parameter Name="Latitude" Mode="In" Type="String" />
+            <Parameter Name="Longitude" Mode="In" Type="String" />
+            <Parameter Name="Loginr_Mode" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="UNI_CITY">
           <Key>
@@ -353,6 +436,7 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <Property Name="Tot_Bill_Bal_Vendor" Type="Decimal" Precision="7" Scale="2" />
           <Property Name="Payment_Transaction_Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="Delivered_Time" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="App_Manage_Client" Relationship="s_foodModel.FK_App_Manage_Order_App_Manage_Client" FromRole="App_Manage_Order" ToRole="App_Manage_Client" />
         </EntityType>
         <EntityType Name="Uni_Product">
           <Key>
@@ -419,6 +503,44 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <Property Name="emailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="App_Manage_Client">
+          <Key>
+            <PropertyRef Name="cust_code" />
+          </Key>
+          <Property Name="cust_code" Type="Int32" Nullable="false" />
+          <Property Name="cust_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="cust_address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Cust_Mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Cust_email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="cust_status" Type="Int32" Nullable="false" />
+          <Property Name="entry_date" Type="DateTime" Precision="0" />
+          <Property Name="update_entry_date" Type="DateTime" Precision="0" />
+          <Property Name="Latitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Longitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Loginr_Mode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Last_Login_time" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Last_Login_Date" Type="DateTime" Precision="0" />
+          <Property Name="Country_Code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="platform" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Device_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="token_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Social_media_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="App_Manage_Order" Relationship="s_foodModel.FK_App_Manage_Order_App_Manage_Client" FromRole="App_Manage_Client" ToRole="App_Manage_Order" />
+        </EntityType>
+        <Association Name="FK_App_Manage_Order_App_Manage_Client">
+          <End Type="s_foodModel.App_Manage_Client" Role="App_Manage_Client" Multiplicity="0..1" />
+          <End Type="s_foodModel.App_Manage_Order" Role="App_Manage_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Manage_Client">
+              <PropertyRef Name="cust_code" />
+            </Principal>
+            <Dependent Role="App_Manage_Order">
+              <PropertyRef Name="cust_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -614,6 +736,34 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Put_Payment_Transanction" FunctionName="s_foodModel.Store.Put_Payment_Transanction" />
+          <EntitySetMapping Name="App_Manage_Client">
+            <EntityTypeMapping TypeName="s_foodModel.App_Manage_Client">
+              <MappingFragment StoreEntitySet="App_Manage_Client">
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Social_media_id" ColumnName="Social_media_id" />
+                <ScalarProperty Name="token_id" ColumnName="token_id" />
+                <ScalarProperty Name="Device_id" ColumnName="Device_id" />
+                <ScalarProperty Name="platform" ColumnName="platform" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Country_Code" ColumnName="Country_Code" />
+                <ScalarProperty Name="Last_Login_Date" ColumnName="Last_Login_Date" />
+                <ScalarProperty Name="Last_Login_time" ColumnName="Last_Login_time" />
+                <ScalarProperty Name="Loginr_Mode" ColumnName="Loginr_Mode" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="update_entry_date" ColumnName="update_entry_date" />
+                <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+                <ScalarProperty Name="cust_status" ColumnName="cust_status" />
+                <ScalarProperty Name="Cust_email" ColumnName="Cust_email" />
+                <ScalarProperty Name="Cust_Mobile" ColumnName="Cust_Mobile" />
+                <ScalarProperty Name="cust_address" ColumnName="cust_address" />
+                <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+                <ScalarProperty Name="cust_code" ColumnName="cust_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PUT_Client_Detail" FunctionName="s_foodModel.Store.PUT_Client_Detail" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

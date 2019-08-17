@@ -12,6 +12,8 @@ namespace Quenchhunger
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class s_foodEntities1 : DbContext
     {
@@ -34,5 +36,72 @@ namespace Quenchhunger
         public virtual DbSet<UNI_CATEGORY> UNI_CATEGORY { get; set; }
         public virtual DbSet<App_Manage_Order_Detail> App_Manage_Order_Detail { get; set; }
         public virtual DbSet<UNI_DelveryAddress> UNI_DelveryAddress { get; set; }
+        public virtual DbSet<App_Manage_Client> App_Manage_Client { get; set; }
+    
+        public virtual int Put_Payment_Transanction(string merchant_id, string transaction_id, Nullable<int> order_Id, Nullable<int> cust_Id, Nullable<decimal> transaction_amt, string transaction_Currency, string tranx_memo)
+        {
+            var merchant_idParameter = merchant_id != null ?
+                new ObjectParameter("Merchant_id", merchant_id) :
+                new ObjectParameter("Merchant_id", typeof(string));
+    
+            var transaction_idParameter = transaction_id != null ?
+                new ObjectParameter("Transaction_id", transaction_id) :
+                new ObjectParameter("Transaction_id", typeof(string));
+    
+            var order_IdParameter = order_Id.HasValue ?
+                new ObjectParameter("Order_Id", order_Id) :
+                new ObjectParameter("Order_Id", typeof(int));
+    
+            var cust_IdParameter = cust_Id.HasValue ?
+                new ObjectParameter("Cust_Id", cust_Id) :
+                new ObjectParameter("Cust_Id", typeof(int));
+    
+            var transaction_amtParameter = transaction_amt.HasValue ?
+                new ObjectParameter("Transaction_amt", transaction_amt) :
+                new ObjectParameter("Transaction_amt", typeof(decimal));
+    
+            var transaction_CurrencyParameter = transaction_Currency != null ?
+                new ObjectParameter("Transaction_Currency", transaction_Currency) :
+                new ObjectParameter("Transaction_Currency", typeof(string));
+    
+            var tranx_memoParameter = tranx_memo != null ?
+                new ObjectParameter("tranx_memo", tranx_memo) :
+                new ObjectParameter("tranx_memo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Put_Payment_Transanction", merchant_idParameter, transaction_idParameter, order_IdParameter, cust_IdParameter, transaction_amtParameter, transaction_CurrencyParameter, tranx_memoParameter);
+        }
+    
+        public virtual int PUT_Client_Detail(string cust_name, string cust_address, string cust_Mobile, string cust_email, string latitude, string longitude, string loginr_Mode)
+        {
+            var cust_nameParameter = cust_name != null ?
+                new ObjectParameter("cust_name", cust_name) :
+                new ObjectParameter("cust_name", typeof(string));
+    
+            var cust_addressParameter = cust_address != null ?
+                new ObjectParameter("cust_address", cust_address) :
+                new ObjectParameter("cust_address", typeof(string));
+    
+            var cust_MobileParameter = cust_Mobile != null ?
+                new ObjectParameter("Cust_Mobile", cust_Mobile) :
+                new ObjectParameter("Cust_Mobile", typeof(string));
+    
+            var cust_emailParameter = cust_email != null ?
+                new ObjectParameter("Cust_email", cust_email) :
+                new ObjectParameter("Cust_email", typeof(string));
+    
+            var latitudeParameter = latitude != null ?
+                new ObjectParameter("Latitude", latitude) :
+                new ObjectParameter("Latitude", typeof(string));
+    
+            var longitudeParameter = longitude != null ?
+                new ObjectParameter("Longitude", longitude) :
+                new ObjectParameter("Longitude", typeof(string));
+    
+            var loginr_ModeParameter = loginr_Mode != null ?
+                new ObjectParameter("Loginr_Mode", loginr_Mode) :
+                new ObjectParameter("Loginr_Mode", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PUT_Client_Detail", cust_nameParameter, cust_addressParameter, cust_MobileParameter, cust_emailParameter, latitudeParameter, longitudeParameter, loginr_ModeParameter);
+        }
     }
 }

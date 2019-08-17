@@ -1,7 +1,54 @@
-﻿<br />
-<br>
-<div style="align-content:center">
+﻿@Model Quenchhunger.Models.Payement;
+<div class="container m-t-30">
+    <div class="widget clearfix">
+        <!-- /widget heading -->
+        <div class="widget-heading">
+            <div align="center">
+                <h3 class="widget-title text-dark">
+                    Online  Payment Process
+                </h3>
+            </div>
+            <div class="clearfix"></div>
+        </div>
 
-    <b>Under Construction</b>
+        <div class="widget-body">
 
+            <div class="row">
+                <div class="col-sm-12 margin-b-30">
+                    <div align="center">
+                        <form id="form1" action="http://gtweb.gtbank.com/GTPay/Tranx.aspx" method="post">
+                            <div>
+                                @if (Model != null)
+                                {
+                                    <input type="hidden" id="gtpay_mert_id" name="gtpay_mert_id" value=@Model.MerchantId /> 
+                                    <input type="hidden" id="gtpay_tranx_id" name="gtpay_tranx_id" value=@Model.Tranx_id />
+                                    <input type="hidden" id="gtpay_tranx_amt" name="gtpay_tranx_amt" value=@Model.Pay_amt />
+                                    <input type="hidden" id="gtpay_tranx_curr" name="gtpay_tranx_curr" value=@Model.Tranx_curr />
+                                    <input type="hidden" id="gtpay_cust_id" name="gtpay_cust_id" value=@Model.Cust_id />
+                                    <input type="hidden" id="gtpay_order_id" name="gtpay_order_id" value=@Model.Order_id />
+
+                                    <input type="hidden" id="gtpay_tranx_memo" name="gtpay_tranx_memo" value=@Model.Tranx_memo />
+                                    <input type="hidden" id="gtpay_no_show_gtbank" name="gtpay_no_show_gtbank" value="yes" />
+                                    <input type="hidden" id="gtpay_echo_data" name="gtpay_echo_data" value="TEST" />
+                                    <input type="hidden" id="gtpay_gway_name" name="gtpay_gway_name" value="" />
+                                    <input type="hidden" id="gtpay_hash" name="gtpay_hash" value=@Model.HashValue />
+                                    <input type="hidden" id="gtpay_tranx_noti_url" name="gtpay_tranx_noti_url" value=@Model.Tranx_noti_url />
+                                    <div align="center">
+                                        <input type="submit" value="Pay Via GTPay" class="btn btn-lg theme-btn">
+                                    </div>
+                                }
+                            </div>
+                        </form>
+
+                        <br />
+                        <br />
+                        <br />
+                        <input type="submit" value="Cash On Delivery" class="btn btn-lg theme-btn">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 </div>
