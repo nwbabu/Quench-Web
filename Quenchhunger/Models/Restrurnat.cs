@@ -48,16 +48,16 @@ namespace Quenchhunger.Models
     }
     public class cartCheckOut
     {
-       public  List<CartDetails> cartList { get; set; }
-       public List<Product> resProducts { get; set; }
-       public int cartTotal { get; set; }
-       public string selectedAddress { get; set; }
-       public List<DeliveryAddress> deliveryAddress { get; set; }
+        public List<CartDetails> cartList { get; set; }
+        public List<Product> resProducts { get; set; }
+        public int cartTotal { get; set; }
+        public string selectedAddress { get; set; }
+        public List<DeliveryAddress> deliveryAddress { get; set; }
 
     }
     public class DeliveryAddress
     {
-      
+
         public long id { get; set; }
         public string clientId { get; set; }
         public string firstName { get; set; }
@@ -69,6 +69,22 @@ namespace Quenchhunger.Models
         public string pincode { get; set; }
         public string emailAddress { get; set; }
         public string phone { get; set; }
+    }
+    public class OrderDetails
+    {
+        public int orderId { get; set; }
+        public int cust_id { get; set; }
+        public int restaurant_id { get; set; }
+        public string productDetails { get; set; }
+        public decimal Delivery_Charges { get; set; }
+        public string Remark { get; set; }
+        public string session_id { get; set; }
+        public string promo_code { get; set; }
+        public decimal Tot_Bill_Amt { get; set; }
+        public decimal discount { get; set; }
+        public decimal Recd_amt { get; set; }
+        public int Otp { get; set; }
+
     }
     public enum Country
     {

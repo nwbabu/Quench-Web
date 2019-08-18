@@ -11,13 +11,14 @@ namespace Quenchhunger.Controllers
     {
         // GET: CheckOut
         QuenchData quenchData = new QuenchData();
+        List<CartDetails> cartlist = null;
         public ActionResult Index()
         {
             if (User.Identity.IsAuthenticated)
             {
                 string loginId = User.Identity.GetUserName();
                 cartCheckOut checkout = new cartCheckOut();
-                List<CartDetails> cartlist = null;
+               
                 if (Session["cartlist"] != null)
                 {
                     cartlist = (List<CartDetails>)Session["cartlist"];
@@ -48,16 +49,40 @@ namespace Quenchhunger.Controllers
         [HttpPost]
         public ActionResult SaveOrder(FormCollection frm)
         {
+            OrderDetails orderDt = new OrderDetails();
             int  addressId = Convert.ToInt32( frm["address"]);
             DeliveryAddress delAddress = quenchData.getDeliveryAddressById(addressId);
             quenchData.InsertClientDetails(delAddress);
             int cust_code = quenchData.getCustomerId(delAddress.emailAddress, delAddress.phone);
-            Session["cust_code"] = cust_code;
-            Random rng = new Random();
-            //Fetching OTP Characters
-            string OtpCharacters = OTPGenerate.OTPCharacters();
-            //Createing More Secure OTP Password by Using MD5 algorithm
-            string OTPPassword = OTPGenerate.OTPGenerator(OtpCharacters, rng.Next(10).ToString());
+            if (Session["cartlist"] != null)
+            {
+                string productDetails = "(";
+                cartlist = (List<CartDetails>)Session["cartlist"];
+                foreach (var item in cartlist)
+                {
+                    productDetails+= item.productId + "," + item.qty + "," + item.price + ";";
+                }
+                productDetails += ")";
+                int res_id = Convert.ToInt32(Session["res_id"].ToString());
+                orderDt.cust_id = cust_code;
+                orderDt.restaurant_id = res_id;
+                orderDt.Tot_Bill_Amt= cartlist.Sum(x => x.price);
+                orderDt.productDetails = productDetails;
+                orderDt.session_id = Session.SessionID;
+                orderDt.Delivery_Charges = 0;
+                orderDt.discount = 0;
+                orderDt.promo_code = "";
+                orderDt.Recd_amt = 0;
+                orderDt.Remark = "";
+                orderDt = quenchData.InsertOrder(orderDt);
+                Session["order"] = orderDt;
+                //Random rng = new Random();
+                ////Fetching OTP Characters
+                //string OtpCharacters = OTPGenerate.OTPCharacters();
+                ////Createing More Secure OTP Password by Using MD5 algorithm
+                //string OTPPassword = OTPGenerate.OTPGenerator(OtpCharacters, rng.Next(10).ToString());
+                
+            }
             return RedirectToAction("getParameters", "Payment");
         }
 

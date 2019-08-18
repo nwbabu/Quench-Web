@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 
 namespace Quenchhunger.Models
@@ -17,5 +19,14 @@ namespace Quenchhunger.Models
         public string Tranx_memo { get; set; }
         public string Tranx_noti_url { get; set; }
         public string HashValue { get; set; }
+        public string callurl(string url)
+        {
+            WebRequest request = HttpWebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            string urlText = reader.ReadToEnd();
+            return urlText;
+        }
     }
+
 }

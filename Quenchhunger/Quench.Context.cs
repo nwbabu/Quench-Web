@@ -37,6 +37,7 @@ namespace Quenchhunger
         public virtual DbSet<App_Manage_Order_Detail> App_Manage_Order_Detail { get; set; }
         public virtual DbSet<UNI_DelveryAddress> UNI_DelveryAddress { get; set; }
         public virtual DbSet<App_Manage_Client> App_Manage_Client { get; set; }
+        public virtual DbSet<App_Manage_Payment_Transanction> App_Manage_Payment_Transanction { get; set; }
     
         public virtual int Put_Payment_Transanction(string merchant_id, string transaction_id, Nullable<int> order_Id, Nullable<int> cust_Id, Nullable<decimal> transaction_amt, string transaction_Currency, string tranx_memo)
         {
@@ -102,6 +103,51 @@ namespace Quenchhunger
                 new ObjectParameter("Loginr_Mode", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PUT_Client_Detail", cust_nameParameter, cust_addressParameter, cust_MobileParameter, cust_emailParameter, latitudeParameter, longitudeParameter, loginr_ModeParameter);
+        }
+    
+        public virtual int Put_Order_Details(Nullable<int> cust_id, Nullable<int> restaurant_id, string var1, Nullable<decimal> delivery_Charges, string remark, string session_id, string promo_code, Nullable<decimal> tot_Bill_Amt, Nullable<decimal> discount, Nullable<decimal> recd_amt)
+        {
+            var cust_idParameter = cust_id.HasValue ?
+                new ObjectParameter("cust_id", cust_id) :
+                new ObjectParameter("cust_id", typeof(int));
+    
+            var restaurant_idParameter = restaurant_id.HasValue ?
+                new ObjectParameter("restaurant_id", restaurant_id) :
+                new ObjectParameter("restaurant_id", typeof(int));
+    
+            var var1Parameter = var1 != null ?
+                new ObjectParameter("Var1", var1) :
+                new ObjectParameter("Var1", typeof(string));
+    
+            var delivery_ChargesParameter = delivery_Charges.HasValue ?
+                new ObjectParameter("Delivery_Charges", delivery_Charges) :
+                new ObjectParameter("Delivery_Charges", typeof(decimal));
+    
+            var remarkParameter = remark != null ?
+                new ObjectParameter("Remark", remark) :
+                new ObjectParameter("Remark", typeof(string));
+    
+            var session_idParameter = session_id != null ?
+                new ObjectParameter("session_id", session_id) :
+                new ObjectParameter("session_id", typeof(string));
+    
+            var promo_codeParameter = promo_code != null ?
+                new ObjectParameter("promo_code", promo_code) :
+                new ObjectParameter("promo_code", typeof(string));
+    
+            var tot_Bill_AmtParameter = tot_Bill_Amt.HasValue ?
+                new ObjectParameter("Tot_Bill_Amt", tot_Bill_Amt) :
+                new ObjectParameter("Tot_Bill_Amt", typeof(decimal));
+    
+            var discountParameter = discount.HasValue ?
+                new ObjectParameter("discount", discount) :
+                new ObjectParameter("discount", typeof(decimal));
+    
+            var recd_amtParameter = recd_amt.HasValue ?
+                new ObjectParameter("Recd_amt", recd_amt) :
+                new ObjectParameter("Recd_amt", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Put_Order_Details", cust_idParameter, restaurant_idParameter, var1Parameter, delivery_ChargesParameter, remarkParameter, session_idParameter, promo_codeParameter, tot_Bill_AmtParameter, discountParameter, recd_amtParameter);
         }
     }
 }

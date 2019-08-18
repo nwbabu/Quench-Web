@@ -237,6 +237,71 @@ namespace Quenchhunger.Models
                        }).ToList();
             }
         }
+        public OrderDetails InsertOrder(OrderDetails order)
+        {
+            try
+            {
+                using (s_foodEntities1 context = new s_foodEntities1())
+                {
+                    context.Put_Order_Details(order.cust_id, order.restaurant_id,
+                        order.productDetails, order.Delivery_Charges, order.Remark,
+                        order.session_id, order.promo_code, order.Tot_Bill_Amt, order.discount, order.Recd_amt);
+                    order = getOrderDetail(order);
+                    return order;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public OrderDetails getOrderDetail(OrderDetails order)
+        {
+            try
+            {
+                using (s_foodEntities1 context = new s_foodEntities1())
+                {
+                    var resut = (from or in context.App_Manage_Order
+                                 where or.cust_id == order.cust_id
+                                      && or.restaurant_id == order.restaurant_id
+                                 orderby or.order_date descending
+                                 select new { or.order_id,or.OTP_no}).FirstOrDefault();
+                    order.orderId = resut.order_id;
+                    order.Otp = Convert.ToInt32( resut.OTP_no);
+                    return order;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public void UpdatePaymentDetails(string tranx_id)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                var result = context.App_Manage_Payment_Transanction.Where(x => x.Transaction_id == tranx_id).FirstOrDefault();
+                result.Payment_Date = DateTime.Now;
+                result.Delivert_Transanction_Status = "Success";
+                context.SaveChanges();
+            }
+        }
+        public void UpdateOrderStatus(string tranx_id)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                var result = context.App_Manage_Payment_Transanction.Where(x => x.Transaction_id == tranx_id).FirstOrDefault();
+                if(result.Order_Id!=null)
+                {
+                    var orderDt = context.App_Manage_Order.Where(x => x.order_id == result.Order_Id 
+                    && x.cust_id == result.Cust_Id).FirstOrDefault();
+                    orderDt.Payment_Transaction_Status = "Success";
+                    context.SaveChanges();
+                }
+            }
+        }
         public bool InsertClientDetails(DeliveryAddress address)
         {
             try
@@ -252,8 +317,8 @@ namespace Quenchhunger.Models
                     }
                     else
                     {
-                        if (!context.App_Manage_Client.Any(x => x.cust_address == cust_Address 
-                        && x.Cust_email==address.emailAddress && x.Cust_Mobile==address.phone))
+                        if (!context.App_Manage_Client.Any(x => x.cust_address == cust_Address
+                        && x.Cust_email == address.emailAddress && x.Cust_Mobile == address.phone))
                         {
                             var Client = context.App_Manage_Client.Where(x => x.Cust_Mobile == address.phone &&
                             x.Cust_email == address.emailAddress)

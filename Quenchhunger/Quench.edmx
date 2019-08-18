@@ -83,6 +83,26 @@ warning 6002: The table/view 'S_FOOD.dbo.App_Manage_Order_Detail' does not have 
           <Property Name="Order_delivery_status" Type="varchar" MaxLength="10" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'S_FOOD.dbo.App_Manage_Payment_Transanction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="App_Manage_Payment_Transanction">
+          <Key>
+            <PropertyRef Name="Payment_Transaction_Id" />
+          </Key>
+          <Property Name="Payment_Transaction_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Merchant_id" Type="varchar" MaxLength="50" />
+          <Property Name="Transaction_id" Type="varchar" MaxLength="35" />
+          <Property Name="Order_Id" Type="int" />
+          <Property Name="Cust_Id" Type="int" />
+          <Property Name="Bank_Transaction_id" Type="varchar" MaxLength="50" />
+          <Property Name="Transaction_amt" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="Transaction_Currency" Type="varchar" MaxLength="30" />
+          <Property Name="Delivert_Transanction_Status" Type="varchar" MaxLength="15" />
+          <Property Name="tranx_memo" Type="varchar" MaxLength="100" />
+          <Property Name="Transaction_Date" Type="smalldatetime" />
+          <Property Name="Payment_Date" Type="datetime" />
+          <Property Name="Transaction_time" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="uni_area">
           <Key>
@@ -235,6 +255,18 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <Parameter Name="Longitude" Type="varchar" Mode="In" />
           <Parameter Name="Loginr_Mode" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="Put_Order_Details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cust_id" Type="int" Mode="In" />
+          <Parameter Name="restaurant_id" Type="int" Mode="In" />
+          <Parameter Name="Var1" Type="varchar" Mode="In" />
+          <Parameter Name="Delivery_Charges" Type="decimal" Mode="In" />
+          <Parameter Name="Remark" Type="varchar" Mode="In" />
+          <Parameter Name="session_id" Type="varchar" Mode="In" />
+          <Parameter Name="promo_code" Type="varchar" Mode="In" />
+          <Parameter Name="Tot_Bill_Amt" Type="decimal" Mode="In" />
+          <Parameter Name="discount" Type="decimal" Mode="In" />
+          <Parameter Name="Recd_amt" Type="decimal" Mode="In" />
+        </Function>
         <Function Name="Put_Payment_Transanction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Merchant_id" Type="varchar" Mode="In" />
           <Parameter Name="Transaction_id" Type="varchar" Mode="In" />
@@ -267,6 +299,23 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
     [App_Manage_Order_Detail].[qty_mes] AS [qty_mes], 
     [App_Manage_Order_Detail].[Order_delivery_status] AS [Order_delivery_status]
     FROM [dbo].[App_Manage_Order_Detail] AS [App_Manage_Order_Detail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="App_Manage_Payment_Transanction" EntityType="Self.App_Manage_Payment_Transanction" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [App_Manage_Payment_Transanction].[Payment_Transaction_Id] AS [Payment_Transaction_Id], 
+    [App_Manage_Payment_Transanction].[Merchant_id] AS [Merchant_id], 
+    [App_Manage_Payment_Transanction].[Transaction_id] AS [Transaction_id], 
+    [App_Manage_Payment_Transanction].[Order_Id] AS [Order_Id], 
+    [App_Manage_Payment_Transanction].[Cust_Id] AS [Cust_Id], 
+    [App_Manage_Payment_Transanction].[Bank_Transaction_id] AS [Bank_Transaction_id], 
+    [App_Manage_Payment_Transanction].[Transaction_amt] AS [Transaction_amt], 
+    [App_Manage_Payment_Transanction].[Transaction_Currency] AS [Transaction_Currency], 
+    [App_Manage_Payment_Transanction].[Delivert_Transanction_Status] AS [Delivert_Transanction_Status], 
+    [App_Manage_Payment_Transanction].[tranx_memo] AS [tranx_memo], 
+    [App_Manage_Payment_Transanction].[Transaction_Date] AS [Transaction_Date], 
+    [App_Manage_Payment_Transanction].[Payment_Date] AS [Payment_Date], 
+    [App_Manage_Payment_Transanction].[Transaction_time] AS [Transaction_time]
+    FROM [dbo].[App_Manage_Payment_Transanction] AS [App_Manage_Payment_Transanction]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="uni_area" EntityType="Self.uni_area" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -366,6 +415,19 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
             <Parameter Name="Longitude" Mode="In" Type="String" />
             <Parameter Name="Loginr_Mode" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="Put_Order_Details">
+            <Parameter Name="cust_id" Mode="In" Type="Int32" />
+            <Parameter Name="restaurant_id" Mode="In" Type="Int32" />
+            <Parameter Name="Var1" Mode="In" Type="String" />
+            <Parameter Name="Delivery_Charges" Mode="In" Type="Decimal" />
+            <Parameter Name="Remark" Mode="In" Type="String" />
+            <Parameter Name="session_id" Mode="In" Type="String" />
+            <Parameter Name="promo_code" Mode="In" Type="String" />
+            <Parameter Name="Tot_Bill_Amt" Mode="In" Type="Decimal" />
+            <Parameter Name="discount" Mode="In" Type="Decimal" />
+            <Parameter Name="Recd_amt" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <EntitySet Name="App_Manage_Payment_Transanction" EntityType="s_foodModel.App_Manage_Payment_Transanction" />
         </EntityContainer>
         <EntityType Name="UNI_CITY">
           <Key>
@@ -541,6 +603,24 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="App_Manage_Payment_Transanction">
+          <Key>
+            <PropertyRef Name="Payment_Transaction_Id" />
+          </Key>
+          <Property Name="Payment_Transaction_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Merchant_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Transaction_id" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="Order_Id" Type="Int32" />
+          <Property Name="Cust_Id" Type="Int32" />
+          <Property Name="Bank_Transaction_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Transaction_amt" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="Transaction_Currency" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Delivert_Transanction_Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="tranx_memo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Transaction_Date" Type="DateTime" Precision="0" />
+          <Property Name="Payment_Date" Type="DateTime" Precision="3" />
+          <Property Name="Transaction_time" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -764,6 +844,26 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="PUT_Client_Detail" FunctionName="s_foodModel.Store.PUT_Client_Detail" />
+          <FunctionImportMapping FunctionImportName="Put_Order_Details" FunctionName="s_foodModel.Store.Put_Order_Details" />
+          <EntitySetMapping Name="App_Manage_Payment_Transanction">
+            <EntityTypeMapping TypeName="s_foodModel.App_Manage_Payment_Transanction">
+              <MappingFragment StoreEntitySet="App_Manage_Payment_Transanction">
+                <ScalarProperty Name="Transaction_time" ColumnName="Transaction_time" />
+                <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+                <ScalarProperty Name="tranx_memo" ColumnName="tranx_memo" />
+                <ScalarProperty Name="Delivert_Transanction_Status" ColumnName="Delivert_Transanction_Status" />
+                <ScalarProperty Name="Transaction_Currency" ColumnName="Transaction_Currency" />
+                <ScalarProperty Name="Transaction_amt" ColumnName="Transaction_amt" />
+                <ScalarProperty Name="Bank_Transaction_id" ColumnName="Bank_Transaction_id" />
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+                <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+                <ScalarProperty Name="Transaction_id" ColumnName="Transaction_id" />
+                <ScalarProperty Name="Merchant_id" ColumnName="Merchant_id" />
+                <ScalarProperty Name="Payment_Transaction_Id" ColumnName="Payment_Transaction_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
