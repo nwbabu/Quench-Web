@@ -1,4 +1,50 @@
-﻿
+﻿@Model Quenchhunger.Models.TranssctionResponse;
+<div class="container m-t-30">
+    <div class="widget clearfix">
+        <!-- /widget heading -->
+        <div class="widget-heading">
+            <div align="center">
+                <h3 class="widget-title text-dark">
+                    Online  Payment  Response
+                </h3>
+            </div>
+            <div class="clearfix"></div>
+        </div>
 
-<h2>getResponse</h2>
+        <div class="widget-body">
 
+            <div class="row">
+                <div class="col-sm-12 margin-b-30">
+                    <div align="center">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>User</td>
+                                    <td>@Model.userName</td>
+                                </tr>
+                                <tr>
+                                    <td>Transaction Id</td>
+                                    <td>@Model.tranx_id</td>
+                                </tr>
+                                <tr>
+                                    <td>Amount</td>
+                                    <td>@Model.tranx_amt</td>
+                                </tr>
+                                <tr>
+                                    <td>Status Code</td>
+                                    <td>@Model.tranx_status_code</td>
+                                </tr>
+                                <tr>
+                                    <td>Currency</td>
+                                    <td>@Model.gtpay_tranx_curr</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

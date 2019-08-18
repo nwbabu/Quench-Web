@@ -86,6 +86,15 @@ namespace Quenchhunger.Models
         public int Otp { get; set; }
 
     }
+    public class TranssctionResponse
+    {
+        public string userName { get; set; }
+        public string tranx_id { get; set; }
+        public string tranx_amt_small_denom { get; set; }
+        public string tranx_status_code { get; set; }
+        public string gtpay_tranx_curr { get; set; }
+        public string tranx_amt { get; set; }
+    }
     public enum Country
     {
         India,

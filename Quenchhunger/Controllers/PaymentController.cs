@@ -32,23 +32,20 @@ namespace Quenchhunger.Controllers
                 _payment.Tranx_id = quenchData.Generate15UniqueDigits();
                 _payment.Tranx_curr = "566";
                 _payment.Order_id = orderDt.orderId.ToString();
-                _payment.Tranx_noti_url = "http://localhost:9106/Payment/getResponse";
+                _payment.Tranx_noti_url = "http://quenchhunger.com/Quenchhunger-Web/Payment/getResponse";
                 string getHash = _payment.MerchantId.Trim() + _payment.Tranx_id.Trim() + _payment.Pay_amt.Trim() +
                     _payment.Tranx_curr + _payment.Cust_id.Trim() + _payment.Tranx_noti_url.Trim() + encript.hashkey;
                 getHash = encript.GenerateSHA512String(getHash.Trim());
                 _payment.HashValue = getHash;
-                if (Session["cust_code"] != null)
-                {
-                    int custId = Convert.ToInt32(Session["cust_code"].ToString());
-                    quenchData.InsertPaymentDetails(_payment, custId);
-                }
 
+                int custId = orderDt.cust_id;
+                quenchData.InsertPaymentDetails(_payment, custId);
             }
             return View(_payment);
         }
         public ActionResult getResponse()
         {
-           
+            TranssctionResponse _response = new TranssctionResponse();
             string tranx_id = Request.Form["gtpay_tranx_id"].ToString();
             string tranx_amt_small_denom = Request.Form["gtpay_tranx_amt_small_denom"].ToString();
             string tranx_status_code = Request.Form["gtpay_tranx_status_code"].ToString();
@@ -57,6 +54,12 @@ namespace Quenchhunger.Controllers
             string full_verification_hash = Request.Form["gtpay_full_verification_hash"].ToString();
             string you_hash = tranx_id + tranx_amt_small_denom + tranx_status_code + gtpay_tranx_curr + encript.hashkey;
             you_hash = encript.GenerateSHA512String(you_hash);
+            _response.tranx_id = tranx_id;
+            _response.tranx_amt_small_denom = tranx_amt_small_denom;
+            _response.tranx_status_code = tranx_status_code;
+            _response.tranx_amt = tranx_amt;
+            _response.gtpay_tranx_curr = gtpay_tranx_curr;
+            _response.userName = User.Identity.GetUserName();
             if (you_hash.Equals(full_verification_hash))
             {
                 string hash_req = encript.MarchantId + tranx_id + encript.hashkey;
@@ -69,6 +72,7 @@ namespace Quenchhunger.Controllers
                 {
                     quenchData.UpdatePaymentDetails(tranx_id);
                     quenchData.UpdateOrderStatus(tranx_id);
+
                     Session["cartlist"] = null;
                     Session["cart"] = null;
                 }
@@ -77,4 +81,5 @@ namespace Quenchhunger.Controllers
         }
 
     }
+   
 }
