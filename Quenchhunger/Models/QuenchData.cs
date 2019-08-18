@@ -282,26 +282,10 @@ namespace Quenchhunger.Models
         {
             using (s_foodEntities1 context = new s_foodEntities1())
             {
-                var result = context.App_Manage_Payment_Transanction.Where(x => x.Transaction_id == tranx_id).FirstOrDefault();
-                result.Payment_Date = DateTime.Now;
-                result.Delivert_Transanction_Status = "Success";
-                context.SaveChanges();
+                context.UpdateTrancationStatus(tranx_id);
             }
         }
-        public void UpdateOrderStatus(string tranx_id)
-        {
-            using (s_foodEntities1 context = new s_foodEntities1())
-            {
-                var result = context.App_Manage_Payment_Transanction.Where(x => x.Transaction_id == tranx_id).FirstOrDefault();
-                if(result.Order_Id!=null)
-                {
-                    var orderDt = context.App_Manage_Order.Where(x => x.order_id == result.Order_Id 
-                    && x.cust_id == result.Cust_Id).FirstOrDefault();
-                    orderDt.Payment_Transaction_Status = "Success";
-                    context.SaveChanges();
-                }
-            }
-        }
+       
         public bool InsertClientDetails(DeliveryAddress address)
         {
             try

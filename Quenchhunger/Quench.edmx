@@ -276,6 +276,9 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <Parameter Name="Transaction_Currency" Type="varchar" Mode="In" />
           <Parameter Name="tranx_memo" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="UpdateTrancationStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TransactionId" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="s_foodModelStoreContainer">
           <EntitySet Name="App_Manage_Client" EntityType="Self.App_Manage_Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="App_Manage_Order" EntityType="Self.App_Manage_Order" Schema="dbo" store:Type="Tables" />
@@ -428,6 +431,9 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
             <Parameter Name="Recd_amt" Mode="In" Type="Decimal" />
           </FunctionImport>
           <EntitySet Name="App_Manage_Payment_Transanction" EntityType="s_foodModel.App_Manage_Payment_Transanction" />
+          <FunctionImport Name="UpdateTrancationStatus">
+            <Parameter Name="TransactionId" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="UNI_CITY">
           <Key>
@@ -864,6 +870,7 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UpdateTrancationStatus" FunctionName="s_foodModel.Store.UpdateTrancationStatus" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

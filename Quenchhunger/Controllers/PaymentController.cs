@@ -40,6 +40,7 @@ namespace Quenchhunger.Controllers
 
                 int custId = orderDt.cust_id;
                 quenchData.InsertPaymentDetails(_payment, custId);
+              
             }
             return View(_payment);
         }
@@ -71,13 +72,11 @@ namespace Quenchhunger.Controllers
                 if (res["ResponseCode"] == "00")
                 {
                     quenchData.UpdatePaymentDetails(tranx_id);
-                    quenchData.UpdateOrderStatus(tranx_id);
-
                     Session["cartlist"] = null;
                     Session["cart"] = null;
                 }
             }
-            return View();
+            return View(_response);
         }
 
     }

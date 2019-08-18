@@ -149,5 +149,14 @@ namespace Quenchhunger
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Put_Order_Details", cust_idParameter, restaurant_idParameter, var1Parameter, delivery_ChargesParameter, remarkParameter, session_idParameter, promo_codeParameter, tot_Bill_AmtParameter, discountParameter, recd_amtParameter);
         }
+    
+        public virtual int UpdateTrancationStatus(string transactionId)
+        {
+            var transactionIdParameter = transactionId != null ?
+                new ObjectParameter("TransactionId", transactionId) :
+                new ObjectParameter("TransactionId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateTrancationStatus", transactionIdParameter);
+        }
     }
 }
