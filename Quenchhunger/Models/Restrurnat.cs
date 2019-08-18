@@ -94,6 +94,7 @@ namespace Quenchhunger.Models
         public string tranx_status_code { get; set; }
         public string gtpay_tranx_curr { get; set; }
         public string tranx_amt { get; set; }
+        public string tran_message { get; set; }
     }
     public enum Country
     {
