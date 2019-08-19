@@ -69,7 +69,7 @@ namespace Quenchhunger.Controllers
                     string hash_req = encript.MarchantId + tranx_id + encript.hashkey;
                     hash_req = encript.GenerateSHA512String(hash_req);
                     string parameters = "mertid=" + encript.MarchantId + "&amount=" + tranx_amt_small_denom + "&tranxid=" + tranx_id + "&hash=" + hash_req;
-                    string reuestUrl = "https://ibank.gtbank.com/GTPayService/gettransactionstatus.json?" + parameters;
+                    string reuestUrl = "http://gtweb.gtbank.com/GTPayService/gettransactionstatus.json?" + parameters;
                     string response = _payment.callurl(reuestUrl);
                     var res = JsonConvert.DeserializeObject<dynamic>(response);
                     if (res["ResponseCode"] == "00")
@@ -92,6 +92,17 @@ namespace Quenchhunger.Controllers
                 _response.tran_message = "Your Payment Fail/Pening  at Bank.Please Wait for some Time";
             }
             return View(_response);
+        }
+
+        public ActionResult VerifyPayment()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult VerifyPayment( FormCollection frm)
+        {
+            string TransId = frm[""];
+            return View();
         }
 
     }

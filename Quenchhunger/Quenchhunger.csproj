@@ -328,6 +328,7 @@
     <Content Include="Views\CheckOut\AddDeliveryAddress.cshtml" />
     <Content Include="Views\Payment\getParameters.cshtml" />
     <Content Include="Views\Payment\getResponse.cshtml" />
+    <Content Include="Views\Payment\VerifyPayment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
