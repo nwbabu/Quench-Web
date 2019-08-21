@@ -48,7 +48,8 @@ namespace Quenchhunger.Controllers
         {
             
             TranssctionResponse _response = new TranssctionResponse();
-            try {
+            try
+            {
                 string tranx_id = Request.Form["gtpay_tranx_id"].ToString();
                 string tranx_amt_small_denom = Request.Form["gtpay_tranx_amt_small_denom"].ToString();
                 string tranx_status_code = Request.Form["gtpay_tranx_status_code"].ToString();
@@ -85,11 +86,13 @@ namespace Quenchhunger.Controllers
             {
                 _response.tranx_id = "";
                 _response.tranx_amt_small_denom = "";
-                _response.tranx_status_code ="";
+                _response.tranx_status_code = "";
                 _response.tranx_amt = "";
                 _response.gtpay_tranx_curr = "";
                 _response.userName = User.Identity.GetUserName();
-                _response.tran_message = "Your Payment Fail/Pening  at Bank.Please Wait for some Time";
+                _response.tran_message = "Your Payment Fail/Pending  at Bank.Please Wait for some Time \n" +
+                   " If your Account is Debited Please Verify Payment:";
+               
             }
             return View(_response);
         }
@@ -101,7 +104,25 @@ namespace Quenchhunger.Controllers
         [HttpPost]
         public ActionResult VerifyPayment( FormCollection frm)
         {
-            string TransId = frm[""];
+            ViewBag.Message = "";
+            string TransId = frm["txnid"];
+            string amt = frm["amt"];
+            string hash_req = encript.MarchantId + TransId + encript.hashkey;
+            hash_req = encript.GenerateSHA512String(hash_req);
+            string parameters = "mertid=" + encript.MarchantId + "&amount=" + amt + "&tranxid=" + TransId + "&hash=" + hash_req;
+            string reuestUrl = "http://gtweb.gtbank.com/GTPayService/gettransactionstatus.json?" + parameters;
+            string response = _payment.callurl(reuestUrl);
+            var res = JsonConvert.DeserializeObject<dynamic>(response);
+            if (res["ResponseCode"] == "00")
+            {
+                
+                quenchData.UpdatePaymentDetails(TransId);
+                ViewBag.Message = "Your Bank Transcation is Success";
+            }
+            else
+            {
+                ViewBag.Message = "Your Bank Transaction Failed/Or Inavild Transaction Id and Amount";
+            }
             return View();
         }
 

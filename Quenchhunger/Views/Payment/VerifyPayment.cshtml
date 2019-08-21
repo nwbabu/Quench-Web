@@ -1,4 +1,6 @@
-﻿<div class="container m-t-30">
+﻿@Html.BeginForm("VerifyPayment", "Payment", FormMethod.Post)
+{                          
+ <div class="container m-t-30">
     <div class="widget clearfix">
         <!-- /widget heading -->
         <div class="widget-heading">
@@ -18,20 +20,29 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <td>Transaction Id</td>
+                                    <td align="right"> Transaction Id</td>
                                     <td>
-                                        <input type="text" value="" placeholder="Enter your Transaction Number" />
+                                        <input type="text" value="" name="txnid" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    @Html.BeginForm("VerifyPayment", "Payment",FormMethod.Post)
-                                    {
-                                       <td colspan="2">
-                                        <input type="submit" value=" Verify " class="btn btn-lg theme-btn" />
-                                       </td>
-                                    }
+                                    <td align="right"> Transaction Amount </td>
+                                    <td>
+                                        <input type="text" value="" name="amt" />
+                                    </td>
                                 </tr>
-
+                                <tr>
+                                  
+                                       <td colspan="2" align="center">
+                                        <input type="submit" value=" Verify Payment " class="btn btn-lg theme-btn" />
+                                       </td>
+                                    
+                                </tr>
+                               <tr>
+                                   <td align="center" colspan="2" style="color:forestgreen;font-size:larger">
+                                       @ViewBag.Message;
+                                   </td>
+                               </tr>
 
                             </tbody>
                         </table>
@@ -43,3 +54,4 @@
         </div>
     </div>
 </div>
+}

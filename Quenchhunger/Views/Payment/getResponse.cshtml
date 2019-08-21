@@ -18,29 +18,43 @@
                     <div align="center">
                         <table class="table">
                             <tbody>
+                                @if (Model != null)
+                                {
+                                    <tr>
+                                        <td>User</td>
+                                        <td>@Model.userName</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transaction Id</td>
+                                        <td>@Model.tranx_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amount</td>
+                                        <td>@Model.tranx_amt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Status Code</td>
+                                        <td>@Model.tranx_status_code</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Currency</td>
+                                        <td>@Model.gtpay_tranx_curr</td>
+                                    </tr>
+                                }
                                 <tr>
-                                    <td>User</td>
-                                    <td>@Model.userName</td>
-                                </tr>
-                                <tr>
-                                    <td>Transaction Id</td>
-                                    <td>@Model.tranx_id</td>
-                                </tr>
-                                <tr>
-                                    <td>Amount</td>
-                                    <td>@Model.tranx_amt</td>
-                                </tr>
-                                <tr>
-                                    <td>Status Code</td>
-                                    <td>@Model.tranx_status_code</td>
-                                </tr>
-                                <tr>
-                                    <td>Currency</td>
-                                    <td>@Model.gtpay_tranx_curr</td>
-                                </tr>
-                                <tr>
-                                   
-                                    <td colspan="2">@Model.tran_message</td>
+
+                                    <td colspan="2" align="center" style="color:forestgreen;font-size:larger">
+                                        @Model.tran_message
+                                    @if (Model.tran_message.Contains("Pending"))
+                                    {
+                                        <br />
+                                        <a class="btn btn-lg theme-btn" href='@Url.Action("VerifyPayment", "Payment")'>
+                                            Verify Payment
+                                        </a>
+
+                                    }
+                                </td>
+
                                 </tr>
                             </tbody>
                         </table>
