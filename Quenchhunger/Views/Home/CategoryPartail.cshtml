@@ -1,25 +1,22 @@
 ﻿@using Quenchhunger.Models;
-@*@Html.Action("categoryRestaurants", "Home")*@
 <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
     <div class="sidebar clearfix m-b-20">
-        <form>
+        @using (Html.BeginForm("applyCategoryFilter", "Home"))
+        {
             <div class="main-block">
                 <div class="sidebar-title white-txt">
                     <h6>Choose Cusine</h6> <i class="fa fa-cutlery pull-right"></i>
                 </div>
-
-
                 <ul>
                     @foreach (var item in Model.foodCat)
                     {
                         <li>
                             <label class="custom-control custom-checkbox">
-                                <input type="checkbox" id="check_@item.id" class="custom-control-input" checked="@item.IsChecked">
-                               
+                                <input type="checkbox" id="check_@item.id" class="custom-control-input" name="categorys" value=@item.id>
                                 @item.Name
                             </label>
                         </li>
-                    }
+                      }
                 </ul>
 
                 <div class="clearfix"></div>
@@ -35,18 +32,18 @@
                 </div>
                 <div class="widget-body">
                     <div class="range-slider m-b-10">
-                        <span id="ex2CurrentSliderValLabel"> Filter by price:<span id="ex2SliderVal"><strong>35</strong></span>€</span>
+                        <span id="ex2CurrentSliderValLabel" > Filter by price:<span id="ex2SliderVal"><strong>35</strong></span>€</span>
                         <br>
-                        <input id="ex2" type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="35" />
+                        <input id="ex2" name="filterAmount" type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="35" />
                     </div>
                 </div>
             </div>
             <div style="margin-left:80px">
                 <input type="submit" class="btn btn-lg theme-btn" value="Apply Filter" />
             </div>
-        </form>
+        }
     </div>
-   
+
     <!-- end:Pricing widget -->
     <div class="widget clearfix">
         <!-- /widget heading -->

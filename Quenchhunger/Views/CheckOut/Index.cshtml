@@ -86,7 +86,7 @@
                                                     <td>@item.price</td>
                                                 </tr>
                                             }
-
+                                            
                                             <tr>
                                                 <td ><strong>Total</strong></td>
                                                 <td>
@@ -94,6 +94,30 @@
                                                 </td>
                                                 <td >
                                                     <strong >@Model.cartTotal</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Delivery Charge</strong></td>
+                                                <td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>-@Model.DeliveryCharage</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Discount</strong></td>
+                                                <td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>-@Model.Offer</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Net Pay Amount</strong></td>
+                                                <td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>@Model.NetPayAmount</strong>
                                                 </td>
                                             </tr>
                                         }

@@ -87,5 +87,14 @@ namespace Quenchhunger.Controllers
         {
             return PartialView("Banner");
         }
+        [HttpPost]
+        public ActionResult applyCategoryFilter(FormCollection frm)
+        {
+            string LoadView = Request.UrlReferrer.ToString();
+            string catIDs = frm["categorys"];
+            string amtFilter = frm["filterAmount"];
+
+            return View();
+        }
     }
 }

@@ -52,6 +52,9 @@ namespace Quenchhunger.Models
         public List<Product> resProducts { get; set; }
         public int cartTotal { get; set; }
         public string selectedAddress { get; set; }
+        public int DeliveryCharage { get; set; } 
+        public int Offer { get; set; }
+        public int NetPayAmount { get; set; }
         public List<DeliveryAddress> deliveryAddress { get; set; }
 
     }

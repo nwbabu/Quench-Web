@@ -79,6 +79,7 @@ namespace Quenchhunger.Controllers
                         quenchData.UpdatePaymentDetails(tranx_id);
                         Session["cartlist"] = null;
                         Session["cart"] = null;
+                        Session["checkout"] = null;
                     }
                 }
             }
