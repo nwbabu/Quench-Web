@@ -80,18 +80,22 @@ namespace Quenchhunger.Models
         {
             using (s_foodEntities1 context = new s_foodEntities1())
             {
-                return context.Uni_Product
-                    .Where(c => c.Restaurant_Id == resId)
-                    .Select(x => new Product()
-                    {
-                        id = x.prod_id,
-                        Name = x.Prod_name,
-                        Description = x.Prod_Desc,
-                        Image = x.Image1,
-                        Price = x.Price.ToString(),
-                        Unit = x.Prod_Unit
-                    }).ToList();
+                var result = (from pro in context.Uni_Product
+                              join category in context.UNI_CATEGORY on pro.Prod_Cat_Id equals category.Category_id
+                              where pro.Restaurant_Id == resId
+                              select new Product
+                              {
+                                  id = pro.prod_id,
+                                  Name = pro.Prod_name,
+                                  Description = pro.Prod_Desc,
+                                  Image = pro.Image1,
+                                  Price = pro.Price.ToString(),
+                                  Unit = pro.Prod_Unit,
+                                  category= category.Category_Name
+                              });
+                return result.ToList();
             }
+
         }
         public List<Product> getTopProduects(int resId)
         {
@@ -267,9 +271,9 @@ namespace Quenchhunger.Models
                                  where or.cust_id == order.cust_id
                                       && or.restaurant_id == order.restaurant_id
                                  orderby or.order_date descending
-                                 select new { or.order_id,or.OTP_no}).FirstOrDefault();
+                                 select new { or.order_id, or.OTP_no }).FirstOrDefault();
                     order.orderId = resut.order_id;
-                    order.Otp = Convert.ToInt32( resut.OTP_no);
+                    order.Otp = Convert.ToInt32(resut.OTP_no);
                     return order;
                 }
             }
@@ -285,7 +289,7 @@ namespace Quenchhunger.Models
                 context.UpdateTrancationStatus(tranx_id);
             }
         }
-       
+
         public bool InsertClientDetails(DeliveryAddress address)
         {
             try

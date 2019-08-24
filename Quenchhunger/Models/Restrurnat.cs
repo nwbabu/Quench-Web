@@ -29,6 +29,7 @@ namespace Quenchhunger.Models
         public string Image { get; set; }
         public string Price { get; set; }
         public string Unit { get; set; }
+        public string category { get; set; }
     }
     public class Category
     {
