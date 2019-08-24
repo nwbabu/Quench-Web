@@ -52,13 +52,20 @@ namespace Quenchhunger.Controllers
         public ActionResult RestaurantsMenu()
         {
             Session["Action"] = "RestaurantsMenu";
+            List<Product> resProducts;
             try
             {
                 int res_id = Convert.ToInt32(Request.QueryString["res_id"].ToString());
                 Session["res_id"] = res_id;
                 TempData["res_id"] = res_id;
-                TempData.Keep();
-                restaurant.resProduct = quenchData.getproduects(res_id);
+                resProducts = quenchData.getproduects(res_id);
+                int discount = quenchData.GetRestaurantDiscountInfo(res_id);
+                if(discount!=0)
+                {
+                    int disValue = Convert.ToInt32(discount);
+                    resProducts.ForEach(pro => pro.discountPrice = quenchData.getDiscountPrice(pro.Price,disValue));
+                }
+                restaurant.resProduct = resProducts;
                 TempData["ProduectDetails"] = restaurant.resProduct;
                 TempData.Keep();
                 return View(restaurant);
@@ -68,6 +75,7 @@ namespace Quenchhunger.Controllers
                 return View();
             }
         }
+       
         public PartialViewResult category()
         {
             int res_id = 0;
@@ -121,15 +129,29 @@ namespace Quenchhunger.Controllers
                 {
                     proList = (List<Product>)TempData["ProduectDetails"];
                     TempData.Keep();
-                    restaurant.resProduct = proList.Where(pro => 
-                           IsExists(catName,pro.category)
-                        ).ToList();
+                    if (catName != null)
+                    {
+                        restaurant.resProduct = proList.Where(pro =>
+                               IsExists(catName, pro.category)
+                            ).ToList();
+                    }
+                    else
+                    {
+                        restaurant.resProduct = proList;
+                    }
                     return View("RestaurantsMenu", restaurant);
                 }
                 else
                 {
                     resDetails= (List<ResturantDetails>)TempData["resDetails"];
-                    restaurant.resDetails = resDetails.Where(r => IsCatExits(r.Category_Name, catName)).ToList();
+                    if (catName != null)
+                    {
+                        restaurant.resDetails = resDetails.Where(r => IsCatExits(r.Category_Name, catName)).ToList();
+                    }
+                    else
+                    {
+                        restaurant.resDetails = resDetails;
+                    }
                     TempData.Keep();
                     return View("Restaurants", restaurant);
                 }

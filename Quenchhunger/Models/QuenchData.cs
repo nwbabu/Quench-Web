@@ -70,7 +70,8 @@ namespace Quenchhunger.Models
                                   Restaurant_Name = res.Restaurant_Name,
                                   restaurant_Logo = res.restaurant_Logo,
                                   res_display_img = res.res_display_img,
-                                  Category_Name = res.Category_Name
+                                  Category_Name = res.Category_Name,
+                                  Discount = res.Discount.ToString()
                               }).ToList();
 
                 return result;
@@ -91,11 +92,19 @@ namespace Quenchhunger.Models
                                   Image = pro.Image1,
                                   Price = pro.Price.ToString(),
                                   Unit = pro.Prod_Unit,
-                                  category= category.Category_Name
+                                  category = category.Category_Name
                               });
                 return result.ToList();
             }
 
+        }
+        public int  GetRestaurantDiscountInfo(int resId)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                var result = context.uni_Restaurant.Where(r => r.res_id == resId).FirstOrDefault();
+                return Convert.ToInt32(result.Discount);
+            }
         }
         public List<Product> getTopProduects(int resId)
         {
@@ -118,7 +127,7 @@ namespace Quenchhunger.Models
         {
             using (s_foodEntities1 context = new s_foodEntities1())
             {
-                return context.Uni_Product
+                Product proDetails= context.Uni_Product
                     .Where(c => c.prod_id == productId)
                     .Select(x => new Product()
                     {
@@ -127,9 +136,19 @@ namespace Quenchhunger.Models
                         Description = x.Prod_Desc,
                         Image = x.Image1,
                         Price = x.Price.ToString(),
-                        Unit = x.Prod_Unit
+                        Unit = x.Prod_Unit,
+                        res_id=x.Restaurant_Id.ToString(),
                     }).FirstOrDefault();
+                proDetails.discountPrice = getDiscountPrice(proDetails.Price, 
+                    GetRestaurantDiscountInfo(Convert.ToInt32(proDetails.res_id)));
+                return proDetails;
+
             }
+        }
+        public int getDiscountPrice(string price, int dis)
+        {
+            int priceValue = Convert.ToInt32(double.Parse(price));
+            return (priceValue - ((priceValue * dis) / 100));
         }
         public List<Category> getFoodCategory(int resId)
         {

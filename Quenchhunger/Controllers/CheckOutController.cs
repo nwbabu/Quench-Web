@@ -26,10 +26,10 @@ namespace Quenchhunger.Controllers
                     checkout.cartList = cartlist;
                     checkout.deliveryAddress = quenchData.getDeliveryAddress(loginId);
                     checkout.DeliveryCharage = 0;
-                    checkout.cartTotal = cartlist.Sum(x => x.price) ;
-                    int offerAmount = (checkout.cartTotal * checkout.Offer) / 100;
+                    checkout.cartTotal = cartlist.Sum(x => x.disCountPrice) ;
+                    int offerAmount = (cartlist.Sum(x => x.price)) - checkout.cartTotal;
                     checkout.Offer = offerAmount;
-                    checkout.NetPayAmount = checkout.cartTotal + checkout.DeliveryCharage - offerAmount;
+                    checkout.NetPayAmount = checkout.cartTotal + checkout.DeliveryCharage;
                     Session["checkout"] = checkout;
                 }
                 return View(checkout);

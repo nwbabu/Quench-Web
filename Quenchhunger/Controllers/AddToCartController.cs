@@ -40,6 +40,7 @@ namespace Quenchhunger.Controllers
                     prodductName = product.Name,
                     productDes = product.Description,
                     price = Convert.ToInt32(double.Parse(product.Price)),
+                    disCountPrice = product.discountPrice,
                     qty = 1
                 };
                 cartlist.Add(cart);
@@ -56,5 +57,6 @@ namespace Quenchhunger.Controllers
             }
             return Redirect("~/Home/RestaurantsMenu?res_id=" + res_id);
         }
+      
     }
 }

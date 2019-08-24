@@ -15,7 +15,7 @@
                                 <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
                                     <div class="entry-logo">
                                         <a class="img-fluid" href="#">
-                                            <img src=@item.Image alt="Food logo">
+                                            <img src=@item.Image alt="Food logo" height="100" width="250">
                                         </a>
                                     </div>
                                     <!-- end:Logo -->
@@ -26,7 +26,15 @@
                                             <a href="#">...</a>
                                         </span>
                                         <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-check"></i>@item.Price </li>
+                                            @if (item.discountPrice != 0)
+                                            {
+                                               <li class="list-inline-item"><strike>@item.Price </strike></li>
+                                               <li class="list-inline-item"><i class="fa fa-check primary-color"></i>@item.discountPrice</li>
+                                            }
+                                            else
+                                            {
+                                                <li class="list-inline-item"><i class="fa fa-check primary-color"></i>@item.Price</li>
+                                            }
                                             <li class="list-inline-item"><i class="fa fa-motorcycle"></i> @item.Unit</li>
                                         </ul>
                                        

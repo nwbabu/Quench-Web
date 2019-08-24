@@ -21,7 +21,7 @@ namespace Quenchhunger.Controllers
             {
                 cartlist = (List<CartDetails>)Session["cartlist"];
                 checkout.cartList = cartlist;
-                checkout.cartTotal = cartlist.Sum(x => x.price);
+                checkout.cartTotal = cartlist.Sum(x => x.disCountPrice);
             }
             return View(checkout);
         }
@@ -36,7 +36,7 @@ namespace Quenchhunger.Controllers
                 CartDetails cartItem = cartlist.Find(x => x.productId == itemId);
                 cartlist.Remove(cartItem);
                 checkout.cartList = cartlist;
-                checkout.cartTotal = cartlist.Sum(x => x.price);
+                checkout.cartTotal = cartlist.Sum(x => x.disCountPrice);
                 Session["cartlist"] = cartlist;
                 Session["cart"] = Convert.ToInt32(Session["cart"]) - 1;
             }
@@ -64,7 +64,8 @@ namespace Quenchhunger.Controllers
                         productId = product.id,
                         prodductName = product.Name,
                         productDes = product.Description,
-                        price = Convert.ToInt32(double.Parse(product.Price)) ,
+                        price = product.discountPrice ,
+                        disCountPrice=product.discountPrice,
                         qty = 1
                     };
                     cartlist.Add(cartItem);
@@ -78,7 +79,7 @@ namespace Quenchhunger.Controllers
                     Session["cart"] = Convert.ToInt32(Session["cart"]) + 1;
                 }
                 checkout.cartList = cartlist;
-                checkout.cartTotal = cartlist.Sum(x => x.price);
+                checkout.cartTotal = cartlist.Sum(x => x.disCountPrice);
             }
             return View("cart", checkout);
         }

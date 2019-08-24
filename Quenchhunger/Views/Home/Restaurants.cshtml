@@ -16,9 +16,11 @@
                                 <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
                                     <div class="entry-logo">
                                         <a class="img-fluid" href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })'>
-                                            <img src=@item.res_display_img alt="Food logo">
+                                            <img src=@item.res_display_img alt="Food logo" height="100" width="200">
                                         </a>
+                                       
                                     </div>
+
                                     <!-- end:Logo -->
                                     <div class="entry-dscr">
                                         <h5><a href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })'>@item.Restaurant_Name</a></h5>
@@ -36,8 +38,23 @@
                                 <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
                                     <div class="right-content bg-white">
                                         <div class="right-review">
-                                            <div class="rating-block"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                            <p> 245 Reviews</p> <a href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })' class="btn theme-btn-dash">View Menu</a>
+                                           
+                                            <div class="rating-block">
+                                             @if (item.Discount != "")
+                                             {
+                                                <div class="text-block">
+                                                    @item.Discount % OFF
+                                                </div>
+                                             }
+                                                <br />
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            </div>
+                                            
+                                            <a href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })' class="btn theme-btn-dash">View Menu</a>
                                         </div>
                                     </div>
                                     <!-- end:right info -->
@@ -68,4 +85,15 @@
 
         });
     </script>
+    <style>
+        .text-block {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            background-color: red;
+            color: white;
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+    </style>
 }

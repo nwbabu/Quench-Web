@@ -20,6 +20,7 @@ namespace Quenchhunger.Models
         public string restaurant_Logo { get; set; }
         public string res_display_img { get; set; }
         public string Category_Name { get; set; }
+        public string Discount { get; set; }
     }
     public class Product
     {
@@ -28,8 +29,10 @@ namespace Quenchhunger.Models
         public string Description { get; set; }
         public string Image { get; set; }
         public string Price { get; set; }
+        public int discountPrice { get; set; }
         public string Unit { get; set; }
         public string category { get; set; }
+        public string res_id { get; set; }
     }
     public class Category
     {
@@ -45,6 +48,7 @@ namespace Quenchhunger.Models
         public string productDes { get; set; }
         public int qty { get; set; }
         public int price { get; set; }
+        public int disCountPrice { get; set; }
 
     }
     public class cartCheckOut
