@@ -26,6 +26,11 @@ namespace Quenchhunger.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Contact(FormCollection frm)
+        {
+            return View("Thanku");
+        }
         public ActionResult Restaurants()
         {
             Session["Action"] = "Restaurants";

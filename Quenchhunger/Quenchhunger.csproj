@@ -329,6 +329,7 @@
     <Content Include="Views\Payment\getParameters.cshtml" />
     <Content Include="Views\Payment\getResponse.cshtml" />
     <Content Include="Views\Payment\VerifyPayment.cshtml" />
+    <Content Include="Views\Home\Thanku.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
