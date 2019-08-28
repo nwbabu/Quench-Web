@@ -9,11 +9,10 @@
                     <div class="form-group">
                         <label class="sr-only" for="exampleInputAmount">I would like to eat....</label>
                         <div class="form-group">
-                            @*<input type="text" class="form-control form-control-lg" id="exampleInputAmount" placeholder="I would like to eat....">*@
                             <input  class="form-control form-control-lg" id="autocomplete"
                                    placeholder="Enter your location"
                                    onFocus="geolocate()"
-                                   type="text" />
+                                   type="text" size="65"  />
                         </div>
                     </div>
                     <button onclick="location.href='@Url.Action("Restaurants", "Home")?Restaurants=' + document.getElementById('autocomplete').value" type="button" class="btn theme-btn btn-lg">Search Restaurants</button>
@@ -60,74 +59,32 @@
         </div>
         <div class="row">
             <!-- Each popular food item starts -->
+        @foreach (var item in Model.resProduct)
+        {
             <div class="col-xs-12 col-sm-6 col-md-4 food-item">
                 <div class="food-item-wrap">
-                    <div class="figure-wrap bg-image" data-image-src="http://placehold.it/380x210">
+                    <div class="figure-wrap bg-image" data-image-src=@item.Image>
                         <div class="distance"><i class="fa fa-pin"></i>1240m</div>
-                        <div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
+                        <div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
                         <div class="review pull-right"><a href="#">198 reviews</a> </div>
                     </div>
                     <div class="content">
-                        <h5><a href="profile.html">Cuisine Name</a></h5>
-                        <div class="product-name">Fried Chicken with cheese</div>
-                        <div class="price-btn-block"> <span class="price"> NGN15,99</span> <a href="#" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                        <h5><a href="profile.html">@item.Name</a></h5>
+                        <div class="product-name"@item.Description></div>
+                        <div class="price-btn-block"> <span class="price"> NGN.@item.Price</span> 
+                        <a href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })' class="btn theme-btn-dash pull-right">Order Now</a> </div>
                     </div>
                     <div class="restaurant-block">
                         <div class="left">
-                            <a class="pull-left" href="profile.html"> <img src="http://placehold.it/50x46" alt="Restaurant logo" /> </a>
-                            <div class="pull-left right-text"> <a href="#">Restaurant Name</a> <span>68 5th Avenue Owerri</span> </div>
+                            <a class="pull-left" href='@Url.Action("RestaurantsMenu", "Home", new { res_id = item.res_id, })'> <img src=@item._resturnt.res_display_img height="50" width="46" alt="Restaurant logo" /> </a>
+                            <div class="pull-left right-text"> <a href="#"></a> <span>@item._resturnt.Restaurant_Name</span> </div>
                         </div>
-                        <div class="right-like-part pull-right"> <i class="fa fa-heart-o"></i> <span>48</span> </div>
+                        <div class="right-like-part pull-right"> <i class="fa fa-heart-o"></i> <span></span> </div>
                     </div>
                 </div>
             </div>
-            <!-- Each popular food item starts -->
-            <!-- Each popular food item starts -->
-            <div class="col-xs-12 col-sm-6 col-md-4 food-item">
-                <div class="food-item-wrap">
-                    <div class="figure-wrap bg-image" data-image-src="http://placehold.it/380x210">
-                        <div class="distance"><i class="fa fa-pin"></i>1240m</div>
-                        <div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                        <div class="review pull-right"><a href="#">198 reviews</a> </div>
-                    </div>
-                    <div class="content">
-                        <h5><a href="profile.html">Cuisine Name</a></h5>
-                        <div class="product-name">Fried Chicken with cheese</div>
-                        <div class="price-btn-block"> <span class="price"> NGN1849</span> <a href="#" class="btn theme-btn-dash pull-right">Order Now</a> </div>
-                    </div>
-                    <div class="restaurant-block">
-                        <div class="left">
-                            <a class="pull-left" href="profile.html"> <img src="http://placehold.it/50x46" alt="Restaurant logo" /> </a>
-                            <div class="pull-left right-text"> <a href="#">Restaurant Name</a> <span>68 5th Avenue Owerri</span> </div>
-                        </div>
-                        <div class="right-like-part pull-right"> <i class="fa fa-heart-o"></i> <span>48</span> </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Each popular food item starts -->
-            <!-- Each popular food item starts -->
-            <div class="col-xs-12 col-sm-6 col-md-4 food-item">
-                <div class="food-item-wrap">
-                    <div class="figure-wrap bg-image" data-image-src="http://placehold.it/380x210">
-                        <div class="distance"><i class="fa fa-pin"></i>1240m</div>
-                        <div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                        <div class="review pull-right"><a href="#">198 reviews</a> </div>
-                    </div>
-                    <div class="content">
-                        <h5><a href="profile.html">Cuisine Name</a></h5>
-                        <div class="product-name">Fried Chicken with cheese</div>
-                        <div class="price-btn-block"> <span class="price">NGN2119</span> <a href="#" class="btn theme-btn-dash pull-right">Order Now</a> </div>
-                    </div>
-                    <div class="restaurant-block">
-                        <div class="left">
-                            <a class="pull-left" href="profile.html"> <img src="http://placehold.it/50x46" alt="Restaurant logo" /> </a>
-                            <div class="pull-left right-text"> <a href="#">Restaurant Name</a> <span>68 5th Avenue Owerri</span> </div>
-                        </div>
-                        <div class="right-like-part pull-right"> <i class="fa fa-heart-o"></i> <span>48</span> </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Each popular food item starts -->
+    }
         </div>
     </div>
 </section>
@@ -288,7 +245,7 @@ function geolocate() {
   }
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0CPj_n4MH40IFLN8XXu5pk6GsGErsw6g&libraries=places&callback=initAutocomplete"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDty2uW-mQSC4MbVuR5S-XbC9K0DskgjWA&libraries=places&callback=initAutocomplete"
         async defer></script>
 }
 <!-- Featured restaurants ends -->

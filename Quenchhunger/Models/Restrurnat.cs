@@ -33,6 +33,7 @@ namespace Quenchhunger.Models
         public string Unit { get; set; }
         public string category { get; set; }
         public string res_id { get; set; }
+        public ResturantDetails _resturnt { get; set; }
     }
     public class Category
     {

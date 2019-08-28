@@ -16,6 +16,7 @@ namespace Quenchhunger.Controllers
         {
             Session["cart"] = 0;
             restaurant.resDetails = quenchData.getTopResturantDetails();
+            restaurant.resProduct = quenchData.getTopTradingProduct();
             return View(restaurant);
         }
         public ActionResult About()

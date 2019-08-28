@@ -158,5 +158,10 @@ namespace Quenchhunger
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateTrancationStatus", transactionIdParameter);
         }
+    
+        public virtual ObjectResult<getTopTradingProduct_Result> getTopTradingProduct()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getTopTradingProduct_Result>("getTopTradingProduct");
+        }
     }
 }

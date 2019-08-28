@@ -77,6 +77,22 @@ namespace Quenchhunger.Models
                 return result;
             }
         }
+        public ResturantDetails getResturnatDetail(int resId)
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                return context.uni_Restaurant.Where(r => r.res_id == resId)
+                    .Select(x => new ResturantDetails()
+                    {
+                        res_id = x.res_id,
+                        Restaurant_Name = x.Restaurant_Name,
+                        restaurant_Logo = x.restaurant_Logo,
+                        res_display_img = x.res_display_img,
+                        Category_Name = x.Category_Name,
+                        Discount = x.Discount.ToString()
+                    }).FirstOrDefault();
+            }
+        }
         public List<Product> getproduects(int resId)
         {
             using (s_foodEntities1 context = new s_foodEntities1())
@@ -123,6 +139,32 @@ namespace Quenchhunger.Models
                     }).Take(10).ToList();
             }
         }
+        public List<Product> getTopTradingProduct()
+        {
+            using (s_foodEntities1 context = new s_foodEntities1())
+            {
+                List<Product> products=new List<Product>();
+                var result= context.getTopTradingProduct().ToList();
+                foreach (var x in result)
+                {
+                    Product p = new Product();
+                    p.id = x.prod_id;
+                    p.Name = x.Prod_name;
+                    p.Description = x.Prod_Desc;
+                    p.Image = x.Image1;
+                    p.Price = x.Price.ToString();
+                    p.Unit = x.Prod_Unit;
+                    p.res_id = x.Restaurant_Id.ToString();
+                    p.discountPrice= getDiscountPrice(x.Price.ToString(),
+                    GetRestaurantDiscountInfo(Convert.ToInt32(x.Restaurant_Id)));
+                    p._resturnt = getResturnatDetail(Convert.ToInt32(p.res_id));
+                    products.Add(p);
+
+                };
+                return products;
+            }
+        }
+       
         public Product getProduct(int productId)
         {
             using (s_foodEntities1 context = new s_foodEntities1())

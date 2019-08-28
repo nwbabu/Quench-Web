@@ -84,6 +84,7 @@ namespace Quenchhunger.Controllers
                 orderDt.Remark = "";
                 orderDt = quenchData.InsertOrder(orderDt);
                 Session["order"] = orderDt;
+
                 //Random rng = new Random();
                 ////Fetching OTP Characters
                 //string OtpCharacters = OTPGenerate.OTPCharacters();

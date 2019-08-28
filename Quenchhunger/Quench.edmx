@@ -246,6 +246,7 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="getTopTradingProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="PUT_Client_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="cust_name" Type="varchar" Mode="In" />
           <Parameter Name="cust_address" Type="varchar" Mode="In" />
@@ -432,8 +433,9 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           </FunctionImport>
           <EntitySet Name="App_Manage_Payment_Transanction" EntityType="s_foodModel.App_Manage_Payment_Transanction" />
           <FunctionImport Name="UpdateTrancationStatus">
-            <Parameter Name="TransactionId" Mode="In" Type="String" />
+          <Parameter Name="TransactionId" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="getTopTradingProduct" ReturnType="Collection(s_foodModel.getTopTradingProduct_Result)" />
         </EntityContainer>
         <EntityType Name="UNI_CITY">
           <Key>
@@ -627,6 +629,15 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
           <Property Name="Payment_Date" Type="DateTime" Precision="3" />
           <Property Name="Transaction_time" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="getTopTradingProduct_Result">
+          <Property Type="Int32" Name="prod_id" Nullable="false" />
+          <Property Type="String" Name="Prod_name" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="Prod_Desc" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Image1" Nullable="true" />
+          <Property Type="Decimal" Name="Price" Nullable="true" Precision="9" Scale="2" />
+          <Property Type="String" Name="Prod_Unit" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Restaurant_Id" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -871,6 +882,19 @@ warning 6002: The table/view 'S_FOOD.dbo.uni_area' does not have a primary key d
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="UpdateTrancationStatus" FunctionName="s_foodModel.Store.UpdateTrancationStatus" />
+          <FunctionImportMapping FunctionImportName="getTopTradingProduct" FunctionName="s_foodModel.Store.getTopTradingProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="s_foodModel.getTopTradingProduct_Result">
+                <ScalarProperty Name="prod_id" ColumnName="prod_id" />
+                <ScalarProperty Name="Prod_name" ColumnName="Prod_name" />
+                <ScalarProperty Name="Prod_Desc" ColumnName="Prod_Desc" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Prod_Unit" ColumnName="Prod_Unit" />
+                <ScalarProperty Name="Restaurant_Id" ColumnName="Restaurant_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
